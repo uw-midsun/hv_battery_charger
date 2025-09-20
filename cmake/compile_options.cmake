@@ -1,6 +1,6 @@
-add_library(STM32F334C8T6 INTERFACE IMPORTED)
+add_library(STM32F3XX INTERFACE IMPORTED)
 
-target_compile_options(STM32F334C8T6
+target_compile_options(STM32F3XX
 INTERFACE
   -ffreestanding
   -Wall
@@ -21,7 +21,7 @@ INTERFACE
   -Wl,-Map=build/out.map
   --specs=nosys.specs 
   --specs=nano.specs
-  -mcpu=cortex-m4'
+  -mcpu=cortex-m4
   -g3
   -ggdb3
   -O0
@@ -29,7 +29,7 @@ INTERFACE
   -fstack-usage
   -DDEBUG
 )
-target_link_options(STM32F334C8T6
+target_link_options(STM32F3XX
 INTERFACE
   -Wl,--gc-sections
 )

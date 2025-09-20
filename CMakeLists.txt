@@ -6,9 +6,11 @@ list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake/")
 project(hv_battery_charger C ASM)
 
 # We should be allowed to use volatile, its embedded.
-add_compile_options(-Wall -Wno-volatile)
+add_compile_options(-Wall)
 
 set(CMAKE_C_STANDARD 11)
 set(CMAKE_C_STANDARD_REQUIRED ON)
 
 include(compile_options)
+
+add_subdirectory(vendor)
