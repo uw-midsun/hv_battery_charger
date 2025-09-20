@@ -1,0 +1,35 @@
+add_library(STM32F334C8T6 INTERFACE IMPORTED)
+
+target_compile_options(STM32F334C8T6
+INTERFACE
+  -ffreestanding
+  -Wall
+  -Wextra
+  -Werror
+  -Wno-discarded-qualifiers 
+  -Wno-unused-variable 
+  -Wno-unused-parameter
+  -Wpointer-arith
+  -Wundef
+  -Wdouble-promotion 
+  -Wno-enum-conversion 
+  -ffunction-sections
+  -fdata-sections 
+  -fsingle-precision-constant
+  -fno-math-errno
+  -Wl,--gc-sections
+  -Wl,-Map=build/out.map
+  --specs=nosys.specs 
+  --specs=nano.specs
+  -mcpu=cortex-m4'
+  -g3
+  -ggdb3
+  -O0
+  -fno-inline
+  -fstack-usage
+  -DDEBUG
+)
+target_link_options(STM32F334C8T6
+INTERFACE
+  -Wl,--gc-sections
+)
