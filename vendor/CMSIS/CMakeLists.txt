@@ -17,7 +17,6 @@ set_source_files_properties(
 target_include_directories(CMSIS INTERFACE
 	${CMSIS_MCU_PATH}/Include
 	${CMAKE_CURRENT_LIST_DIR}/Include
-	${CMAKE_CURRENT_LIST_DIR}/RTOS2/Include
 )
 
 target_link_libraries(CMSIS INTERFACE STM32F3XX)

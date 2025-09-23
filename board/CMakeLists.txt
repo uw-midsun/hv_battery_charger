@@ -8,4 +8,7 @@ set(linkerscript ${CMAKE_SOURCE_DIR}/ld/STM32F334C8TX.ld)
 add_link_options(board PUBLIC -T${linkerscript})
 set_property(TARGET board PROPERTY LINK_DEPENDS ${linkerscript})
 
-target_sources(board PRIVATE src/main.c)
+target_sources(board PRIVATE 
+	src/main.c
+	src/syscalls.c
+)
