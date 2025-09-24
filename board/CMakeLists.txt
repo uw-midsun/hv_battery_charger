@@ -1,6 +1,6 @@
 add_executable(board)
 
-target_link_libraries(board CMSIS HAL STM32F3XX)
+target_link_libraries(board CMSIS HAL STM32F3XX core)
 
 target_include_directories(board PRIVATE ${CMAKE_CURRENT_LIST_DIR}/inc)
 

@@ -17,4 +17,5 @@ include(compile_options)
 
 add_subdirectory(hal_conf)
 add_subdirectory(vendor)
+add_subdirectory(core)
 add_subdirectory(board)
