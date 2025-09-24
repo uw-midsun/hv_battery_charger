@@ -18,4 +18,4 @@ set_source_files_properties(
 target_compile_definitions(HAL INTERFACE USE_HAL_DRIVER)
 target_compile_definitions(HAL INTERFACE STM32F334x8)
 
-target_link_libraries(HAL INTERFACE STM32F3XX)
+target_link_libraries(HAL INTERFACE STM32F3XX hal_conf)

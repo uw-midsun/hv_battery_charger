@@ -15,5 +15,6 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 include(compile_options)
 
 
+add_subdirectory(hal_conf)
 add_subdirectory(vendor)
 add_subdirectory(board)
