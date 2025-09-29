@@ -2,6 +2,8 @@ add_executable(board)
 
 add_libs(board)
 
+target_link_libraries(board drivers)
+
 target_include_directories(board PRIVATE ${CMAKE_CURRENT_LIST_DIR}/inc)
 
 set(linkerscript ${CMAKE_SOURCE_DIR}/ld/STM32F334C8TX.ld) 
