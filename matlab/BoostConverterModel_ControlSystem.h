@@ -9,10 +9,10 @@
  *
  * Model version                  : 1.418
  * Simulink Coder version         : 23.2 (R2023b) 01-Aug-2023
- * C/C++ source code generated on : Tue Sep 30 17:38:10 2025
+ * C/C++ source code generated on : Tue Sep 30 18:00:25 2025
  *
  * Target selection: ert.tlc
- * Embedded hardware selection: Intel->x86-64 (Windows64)
+ * Embedded hardware selection: ARM Compatible->ARM Cortex
  * Code generation objectives: Unspecified
  * Validation result: Not run
  */
@@ -33,6 +33,8 @@
 #define rtmSetErrorStatus(rtm, val)    ((rtm)->errorStatus = (val))
 #endif
 
+#define BoostConverterModel_ControlSystem_M (BoostConverterModel_ControlS_M)
+
 /* Forward declaration for rtModel */
 typedef struct tag_RTM_BoostConverterModel_C_T RT_MODEL_BoostConverterModel__T;
 
@@ -47,6 +49,9 @@ typedef struct {
   real_T StateSpace_o2[2];             /* '<S352>/State-Space' */
   real_T V;                            /* '<S331>/MATLAB Function2' */
   real_T V_l;                          /* '<S317>/MATLAB Function2' */
+  real_T UnitDelay3;                   /* '<S1>/Unit Delay3' */
+  real_T Idc;                          /* '<S317>/MATLAB Function1' */
+  real_T IntegralGain;                 /* '<S38>/Integral Gain' */
 } B_BoostConverterModel_Control_T;
 
 /* Block states (default storage) for system '<Root>' */

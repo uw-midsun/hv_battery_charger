@@ -9,10 +9,10 @@
  *
  * Model version                  : 1.418
  * Simulink Coder version         : 23.2 (R2023b) 01-Aug-2023
- * C/C++ source code generated on : Tue Sep 30 17:38:10 2025
+ * C/C++ source code generated on : Tue Sep 30 18:00:25 2025
  *
  * Target selection: ert.tlc
- * Embedded hardware selection: Intel->x86-64 (Windows64)
+ * Embedded hardware selection: ARM Compatible->ARM Cortex
  * Code generation objectives: Unspecified
  * Validation result: Not run
  */
@@ -180,29 +180,29 @@ void BoostConverterModel_ControlSystem_step(void)
   real_T Sum3;
   real_T rtb_FilterCoefficient;
   real_T rtb_FilterCoefficient_e;
-  real_T rtb_Idc;
-  real_T rtb_IntegralGain;
   real_T rtb_IntegralGain_b;
   real_T rtb_Integrator_e;
   real_T rtb_Saturation_f;
   real_T rtb_Sum1_m;
-  real_T rtb_UnitDelay3;
   int8_T tmp;
   int8_T tmp_0;
   boolean_T rtb_RelationalOperator;
   boolean_T rtb_fixforDTpropagationissue;
 
   /* UnitDelay: '<S1>/Unit Delay3' */
-  rtb_UnitDelay3 = BoostConverterModel_ControlS_DW.UnitDelay3_DSTATE;
+  BoostConverterModel_ControlSy_B.UnitDelay3 =
+    BoostConverterModel_ControlS_DW.UnitDelay3_DSTATE;
 
   /* UnitDelay: '<S1>/Unit Delay4' */
-  rtb_Idc = BoostConverterModel_ControlS_DW.UnitDelay4_DSTATE;
+  BoostConverterModel_ControlSy_B.Idc =
+    BoostConverterModel_ControlS_DW.UnitDelay4_DSTATE;
 
   /* Sum: '<S1>/Sum3' */
-  Sum3 = rtb_UnitDelay3 - rtb_Idc;
+  Sum3 = BoostConverterModel_ControlSy_B.UnitDelay3 -
+    BoostConverterModel_ControlSy_B.Idc;
   if (BoostConverterModel_ControlS_M->Timing.TaskCounters.TID[1] == 0) {
     /* Gain: '<S38>/Integral Gain' */
-    rtb_IntegralGain = 0.0005 * Sum3;
+    BoostConverterModel_ControlSy_B.IntegralGain = 0.0005 * Sum3;
 
     /* Sum: '<S50>/Sum' incorporates:
      *  DiscreteIntegrator: '<S41>/Integrator'
@@ -236,26 +236,29 @@ void BoostConverterModel_ControlSystem_step(void)
   /* Sum: '<S1>/Sum4' incorporates:
    *  Sum: '<S1>/Sum1'
    */
-  rtb_UnitDelay3 = (Sum3 - BoostConverterModel_ControlSy_B.Sum) - rtb_UnitDelay3;
+  BoostConverterModel_ControlSy_B.UnitDelay3 = (Sum3 -
+    BoostConverterModel_ControlSy_B.Sum) -
+    BoostConverterModel_ControlSy_B.UnitDelay3;
 
   /* Sum: '<S1>/Sum5' incorporates:
    *  Sum: '<S1>/Sum2'
    */
-  rtb_Idc = (BoostConverterModel_ControlSy_B.Sum + Sum3) - rtb_Idc;
+  BoostConverterModel_ControlSy_B.Idc = (BoostConverterModel_ControlSy_B.Sum +
+    Sum3) - BoostConverterModel_ControlSy_B.Idc;
   if (BoostConverterModel_ControlS_M->Timing.TaskCounters.TID[1] == 0) {
     /* Gain: '<S94>/Filter Coefficient' incorporates:
      *  DiscreteIntegrator: '<S86>/Filter'
      *  Gain: '<S85>/Derivative Gain'
      *  Sum: '<S86>/SumD'
      */
-    rtb_FilterCoefficient = (0.0003 * rtb_UnitDelay3 -
-      BoostConverterModel_ControlS_DW.Filter_DSTATE) * 10.0;
+    rtb_FilterCoefficient = (0.0003 * BoostConverterModel_ControlSy_B.UnitDelay3
+      - BoostConverterModel_ControlS_DW.Filter_DSTATE) * 10.0;
 
     /* Sum: '<S100>/Sum' incorporates:
      *  DiscreteIntegrator: '<S91>/Integrator'
      *  Gain: '<S96>/Proportional Gain'
      */
-    Sum3 = (0.0001 * rtb_UnitDelay3 +
+    Sum3 = (0.0001 * BoostConverterModel_ControlSy_B.UnitDelay3 +
             BoostConverterModel_ControlS_DW.Integrator_DSTATE_g) +
       rtb_FilterCoefficient;
 
@@ -281,7 +284,7 @@ void BoostConverterModel_ControlSystem_step(void)
     rtb_fixforDTpropagationissue = (rtb_Integrator_e > 0.0);
 
     /* Gain: '<S88>/Integral Gain' */
-    rtb_Integrator_e = 5.0E-5 * rtb_UnitDelay3;
+    rtb_Integrator_e = 5.0E-5 * BoostConverterModel_ControlSy_B.UnitDelay3;
 
     /* Switch: '<S82>/Switch1' incorporates:
      *  Constant: '<S82>/Constant'
@@ -332,14 +335,14 @@ void BoostConverterModel_ControlSystem_step(void)
      *  Gain: '<S135>/Derivative Gain'
      *  Sum: '<S136>/SumD'
      */
-    rtb_FilterCoefficient_e = (0.0003 * rtb_Idc -
+    rtb_FilterCoefficient_e = (0.0003 * BoostConverterModel_ControlSy_B.Idc -
       BoostConverterModel_ControlS_DW.Filter_DSTATE_m) * 10.0;
 
     /* Sum: '<S150>/Sum' incorporates:
      *  DiscreteIntegrator: '<S141>/Integrator'
      *  Gain: '<S146>/Proportional Gain'
      */
-    rtb_Saturation_f = (0.0001 * rtb_Idc +
+    rtb_Saturation_f = (0.0001 * BoostConverterModel_ControlSy_B.Idc +
                         BoostConverterModel_ControlS_DW.Integrator_DSTATE_o) +
       rtb_FilterCoefficient_e;
 
@@ -365,7 +368,7 @@ void BoostConverterModel_ControlSystem_step(void)
     rtb_fixforDTpropagationissue = (rtb_IntegralGain_b > 0.0);
 
     /* Gain: '<S138>/Integral Gain' */
-    rtb_IntegralGain_b = 5.0E-5 * rtb_Idc;
+    rtb_IntegralGain_b = 5.0E-5 * BoostConverterModel_ControlSy_B.Idc;
 
     /* Switch: '<S132>/Switch1' incorporates:
      *  Constant: '<S132>/Constant'
@@ -656,7 +659,8 @@ void BoostConverterModel_ControlSystem_step(void)
 
   /* MATLAB Function: '<S317>/MATLAB Function1' */
   BoostConverterM_MATLABFunction1(BoostConverterModel_ControlSy_B.Product1,
-    BoostConverterModel_ControlSy_B.StateSpace_o1[6], &rtb_Idc);
+    BoostConverterModel_ControlSy_B.StateSpace_o1[6],
+    &BoostConverterModel_ControlSy_B.Idc);
 
   /* MATLAB Function: '<S331>/MATLAB Function1' */
   BoostConverterM_MATLABFunction1(BoostConverterModel_ControlSy_B.Product1_g,
@@ -671,7 +675,8 @@ void BoostConverterModel_ControlSystem_step(void)
     BoostConverterModel_ControlSy_B.StateSpace_o1[9];
   if (BoostConverterModel_ControlS_M->Timing.TaskCounters.TID[1] == 0) {
     /* Update for DiscreteIntegrator: '<S41>/Integrator' */
-    BoostConverterModel_ControlS_DW.Integrator_DSTATE += rtb_IntegralGain;
+    BoostConverterModel_ControlS_DW.Integrator_DSTATE +=
+      BoostConverterModel_ControlSy_B.IntegralGain;
 
     /* Update for DiscreteIntegrator: '<S91>/Integrator' */
     BoostConverterModel_ControlS_DW.Integrator_DSTATE_g += rtb_Integrator_e;
@@ -716,7 +721,8 @@ void BoostConverterModel_ControlSystem_step(void)
     BoostConverterModel_ControlSy_B.StateSpace_o1[3];
 
   /* Update for UnitDelay: '<S317>/Unit Delay1' */
-  BoostConverterModel_ControlS_DW.UnitDelay1_DSTATE_f = rtb_Idc;
+  BoostConverterModel_ControlS_DW.UnitDelay1_DSTATE_f =
+    BoostConverterModel_ControlSy_B.Idc;
 
   /* Update for UnitDelay: '<S331>/Unit Delay1' */
   BoostConverterModel_ControlS_DW.UnitDelay1_DSTATE_h = Sum3;
