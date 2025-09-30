@@ -3,8 +3,10 @@
   * @file    stm32f3xx_hal_usart_ex.c
   * @author  MCD Application Team
   * @brief   Extended USART HAL module driver.
-  *          This file provides firmware functions to manage the following extended
-  *          functionalities of the Universal Synchronous Receiver Transmitter Peripheral (USART).
+  *          This file provides firmware functions to manage the following
+  extended
+  *          functionalities of the Universal Synchronous Receiver Transmitter
+  Peripheral (USART).
   *           + Peripheral Control functions
   *
   *
@@ -43,13 +45,13 @@
 #include "stm32f3xx_hal.h"
 
 /** @addtogroup STM32F3xx_HAL_Driver
-  * @{
-  */
+ * @{
+ */
 
 /** @defgroup USARTEx USARTEx
-  * @brief USART Extended HAL module driver
-  * @{
-  */
+ * @brief USART Extended HAL module driver
+ * @{
+ */
 
 #ifdef HAL_USART_MODULE_ENABLED
 
@@ -62,8 +64,8 @@
 /* Exported functions --------------------------------------------------------*/
 
 /** @defgroup USARTEx_Exported_Functions  USARTEx Exported Functions
-  * @{
-  */
+ * @{
+ */
 
 /** @defgroup USARTEx_Exported_Functions_Group1 IO operation functions
   * @brief Extended USART Transmit/Receive functions
@@ -82,10 +84,9 @@
   * @{
   */
 
-
 /**
-  * @}
-  */
+ * @}
+ */
 
 /** @defgroup USARTEx_Exported_Functions_Group2 Peripheral Control functions
   * @brief    Extended Peripheral Control functions
@@ -108,30 +109,28 @@
   * @{
   */
 
+/**
+ * @}
+ */
 
 /**
-  * @}
-  */
-
-/**
-  * @}
-  */
+ * @}
+ */
 
 /** @addtogroup USARTEx_Private_Functions
-  * @{
-  */
+ * @{
+ */
 
 /**
-  * @}
-  */
+ * @}
+ */
 
 #endif /* HAL_USART_MODULE_ENABLED */
 
 /**
-  * @}
-  */
+ * @}
+ */
 
 /**
-  * @}
-  */
-
+ * @}
+ */

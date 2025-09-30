@@ -50,10 +50,12 @@ static void s_delay_init(void);
 static void s_delay_us(uint32_t us);
 
 /* Example custom chars — safe to leave or remove. */
-static const uint8_t s_special0[8] = {
-    0b00000, 0b11001, 0b11011, 0b00110, 0b01100, 0b11011, 0b10011, 0b00000}; /* % */
-static const uint8_t s_special1[8] = {
-    0b11000, 0b11000, 0b00110, 0b01001, 0b01000, 0b01001, 0b00110, 0b00000}; /* Degrees celsius */
+static const uint8_t s_special0[8] = {0b00000, 0b11001, 0b11011,
+                                      0b00110, 0b01100, 0b11011,
+                                      0b10011, 0b00000}; /* % */
+static const uint8_t s_special1[8] = {0b11000, 0b11000, 0b00110,
+                                      0b01001, 0b01000, 0b01001,
+                                      0b00110, 0b00000}; /* Degrees celsius */
 
 /* API */
 
@@ -63,12 +65,9 @@ void lcd_init(uint8_t rows) {
 
   /* Base: 4-bit, 1-line, 5x8 dots; will OR in 2-line if needed */
   s_function = LCD_4BITMODE | LCD_1LINE | LCD_5x8DOTS;
-  if (s_rows > 1)
-  {
+  if (s_rows > 1) {
     s_function |= LCD_2LINE;
-  }
-  else
-  {
+  } else {
     /* Many modules ignore 5x10 in 1-line mode; this mirrors prior behavior */
     s_function |= LCD_5x10DOTS;
   }
@@ -123,8 +122,7 @@ void lcd_home(void) {
 
 void lcd_set_cursor(uint8_t column, uint8_t row) {
   static const uint8_t row_offsets[4] = {0x00, 0x40, 0x14, 0x54};
-  if (row >= s_rows)
-  {
+  if (row >= s_rows) {
     row = (s_rows == 0) ? 0 : (s_rows - 1);
   }
   s_send_cmd((uint8_t)(LCD_CMD_SETDDRAMADDR | (row_offsets[row] + column)));
@@ -191,8 +189,7 @@ void lcd_no_auto_scroll(void) {
 void lcd_set_backlight(uint8_t new_val) {
   if (new_val) {
     lcd_backlight();
-  }
-  else {
+  } else {
     lcd_no_backlight();
   }
 }
@@ -215,30 +212,23 @@ void lcd_create_special_char(uint8_t location, uint8_t charmap[]) {
   }
 }
 
-void lcd_print_special_char(uint8_t index) {
-  s_send_data(index & 0x07);
-}
+void lcd_print_special_char(uint8_t index) { s_send_data(index & 0x07); }
 
 void LCD_LoadCustomCharacter(uint8_t char_num, uint8_t *rows) {
   lcd_create_special_char(char_num, rows);
 }
 
 void lcd_print_str(const char c[]) {
-  if (c == NULL)
-    return;
+  if (c == NULL) return;
   while (*c) {
     s_send_data((uint8_t)(*c++));
   }
 }
 
 /* Local helpers */
-static void s_send_cmd(uint8_t cmd) {
-  s_send(cmd, 0);
-}
+static void s_send_cmd(uint8_t cmd) { s_send(cmd, 0); }
 
-static void s_send_data(uint8_t data) {
-  s_send(data, LCD_PIN_RS);
-}
+static void s_send_data(uint8_t data) { s_send(data, LCD_PIN_RS); }
 
 static void s_send(uint8_t value, uint8_t rs_mask) {
   uint8_t hi = (uint8_t)(value & 0xF0);

@@ -9,8 +9,8 @@
 #ifndef RTWTYPES_H
 #define RTWTYPES_H
 
-#include <stdint.h>
 #include <stdbool.h>
+#include <stdint.h>
 
 #include "complex_types.h"
 
