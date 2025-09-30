@@ -9,7 +9,7 @@
  *
  * Model version                  : 1.418
  * Simulink Coder version         : 23.2 (R2023b) 01-Aug-2023
- * C/C++ source code generated on : Tue Sep 30 18:00:25 2025
+ * C/C++ source code generated on : Tue Sep 30 18:06:06 2025
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: ARM Compatible->ARM Cortex
@@ -18,7 +18,8 @@
  */
 
 #include "BoostConverterModel_ControlSystem.h"
-#include "rtwtypes.h"
+#include <stdbool.h>
+#include <stdint.h>
 #include <math.h>
 #include <stdlib.h>
 #ifndef CodeFormat
@@ -129,9 +130,9 @@ DW_BoostConverterModel_Contro_T BoostConverterModel_ControlS_DW;
 static RT_MODEL_BoostConverterModel__T BoostConverterModel_ControlS_M_;
 RT_MODEL_BoostConverterModel__T *const BoostConverterModel_ControlS_M =
   &BoostConverterModel_ControlS_M_;
-static void BoostConverterM_MATLABFunction1(real_T rtu_g, real_T rtu_I, real_T
+static void BoostConverterM_MATLABFunction1(double rtu_g, double rtu_I, double
   *rty_Idc);
-static void BoostConverterM_MATLABFunction2(real_T rtu_g, real_T rtu_Vdc, real_T
+static void BoostConverterM_MATLABFunction2(double rtu_g, double rtu_Vdc, double
   *rty_V);
 static void rate_scheduler(void);
 
@@ -157,7 +158,7 @@ static void rate_scheduler(void)
  *    '<S317>/MATLAB Function1'
  *    '<S331>/MATLAB Function1'
  */
-static void BoostConverterM_MATLABFunction1(real_T rtu_g, real_T rtu_I, real_T
+static void BoostConverterM_MATLABFunction1(double rtu_g, double rtu_I, double
   *rty_Idc)
 {
   *rty_Idc = rtu_g * rtu_I;
@@ -168,7 +169,7 @@ static void BoostConverterM_MATLABFunction1(real_T rtu_g, real_T rtu_I, real_T
  *    '<S317>/MATLAB Function2'
  *    '<S331>/MATLAB Function2'
  */
-static void BoostConverterM_MATLABFunction2(real_T rtu_g, real_T rtu_Vdc, real_T
+static void BoostConverterM_MATLABFunction2(double rtu_g, double rtu_Vdc, double
   *rty_V)
 {
   *rty_V = -rtu_g * rtu_Vdc;
@@ -177,17 +178,17 @@ static void BoostConverterM_MATLABFunction2(real_T rtu_g, real_T rtu_Vdc, real_T
 /* Model step function */
 void BoostConverterModel_ControlSystem_step(void)
 {
-  real_T Sum3;
-  real_T rtb_FilterCoefficient;
-  real_T rtb_FilterCoefficient_e;
-  real_T rtb_IntegralGain_b;
-  real_T rtb_Integrator_e;
-  real_T rtb_Saturation_f;
-  real_T rtb_Sum1_m;
-  int8_T tmp;
-  int8_T tmp_0;
-  boolean_T rtb_RelationalOperator;
-  boolean_T rtb_fixforDTpropagationissue;
+  double Sum3;
+  double rtb_FilterCoefficient;
+  double rtb_FilterCoefficient_e;
+  double rtb_IntegralGain_b;
+  double rtb_Integrator_e;
+  double rtb_Saturation_f;
+  double rtb_Sum1_m;
+  int8_t tmp;
+  int8_t tmp_0;
+  bool rtb_RelationalOperator;
+  bool rtb_fixforDTpropagationissue;
 
   /* UnitDelay: '<S1>/Unit Delay3' */
   BoostConverterModel_ControlSy_B.UnitDelay3 =
@@ -459,49 +460,49 @@ void BoostConverterModel_ControlSystem_step(void)
 
   /* S-Function block: <S352>/State-Space */
   {
-    real_T accum;
+    double accum;
 
     /* Circuit has switches */
-    int_T *switch_status = (int_T*)
+    int *switch_status = (int*)
       BoostConverterModel_ControlS_DW.StateSpace_PWORK.SWITCH_STATUS;
-    int_T *switch_status_init = (int_T*)
+    int *switch_status_init = (int*)
       BoostConverterModel_ControlS_DW.StateSpace_PWORK.SWITCH_STATUS_INIT;
-    int_T *SwitchChange = (int_T*)
+    int *SwitchChange = (int*)
       BoostConverterModel_ControlS_DW.StateSpace_PWORK.SW_CHG;
-    int_T *gState = (int_T*)
+    int *gState = (int*)
       BoostConverterModel_ControlS_DW.StateSpace_PWORK.G_STATE;
-    real_T *yswitch = (real_T*)
+    double *yswitch = (double*)
       BoostConverterModel_ControlS_DW.StateSpace_PWORK.Y_SWITCH;
-    int_T *switchTypes = (int_T*)
+    int *switchTypes = (int*)
       BoostConverterModel_ControlS_DW.StateSpace_PWORK.SWITCH_TYPES;
-    int_T *idxOutSw = (int_T*)
+    int *idxOutSw = (int*)
       BoostConverterModel_ControlS_DW.StateSpace_PWORK.IDX_OUT_SW;
-    real_T *DxCol = (real_T*)
+    double *DxCol = (double*)
       BoostConverterModel_ControlS_DW.StateSpace_PWORK.DX_COL;
-    real_T *tmp2 = (real_T*)
+    double *tmp2 = (double*)
       BoostConverterModel_ControlS_DW.StateSpace_PWORK.TMP2;
-    real_T *BDcol = (real_T*)
+    double *BDcol = (double*)
       BoostConverterModel_ControlS_DW.StateSpace_PWORK.BD_COL;
-    real_T *tmp1 = (real_T*)
+    double *tmp1 = (double*)
       BoostConverterModel_ControlS_DW.StateSpace_PWORK.TMP1;
-    real_T *uswlast = (real_T*)
+    double *uswlast = (double*)
       BoostConverterModel_ControlS_DW.StateSpace_PWORK.USWLAST;
-    int_T newState;
-    int_T swChanged = 0;
+    int newState;
+    int swChanged = 0;
     int loopsToDo = 20;
-    real_T temp;
+    double temp;
 
     /* keep an initial copy of switch_status*/
-    memcpy(switch_status_init, switch_status, 2 * sizeof(int_T));
+    memcpy(switch_status_init, switch_status, 2 * sizeof(int));
     memcpy(uswlast, &BoostConverterModel_ControlSy_B.StateSpace_o1[0], 2*sizeof
-           (real_T));
+           (double));
     do {
       if (loopsToDo == 1) {            /* Need to reset some variables: */
         swChanged = 0;
 
         /* return to the original switch status*/
         {
-          int_T i1;
+          int i1;
           for (i1=0; i1 < 2; i1++) {
             swChanged = ((SwitchChange[i1] = switch_status_init[i1] -
                           switch_status[i1]) != 0) ? 1 : swChanged;
@@ -513,14 +514,14 @@ void BoostConverterModel_ControlSystem_step(void)
          * Compute outputs:
          * ---------------
          */
-        real_T *Cs = (real_T*)
+        double *Cs = (double*)
           BoostConverterModel_ControlS_DW.StateSpace_PWORK.CS;
-        real_T *Ds = (real_T*)
+        double *Ds = (double*)
           BoostConverterModel_ControlS_DW.StateSpace_PWORK.DS;
 
         {
-          int_T i1;
-          real_T *y0 = &BoostConverterModel_ControlSy_B.StateSpace_o1[0];
+          int i1;
+          double *y0 = &BoostConverterModel_ControlSy_B.StateSpace_o1[0];
           for (i1=0; i1 < 12; i1++) {
             accum = 0.0;
             accum += *(Cs++) * BoostConverterModel_ControlS_DW.StateSpace_DSTATE;
@@ -561,25 +562,25 @@ void BoostConverterModel_ControlSystem_step(void)
        * --------------------------------------
        */
       if (swChanged) {
-        real_T *As = (real_T*)
+        double *As = (double*)
           BoostConverterModel_ControlS_DW.StateSpace_PWORK.AS;
-        real_T *Cs = (real_T*)
+        double *Cs = (double*)
           BoostConverterModel_ControlS_DW.StateSpace_PWORK.CS;
-        real_T *Bs = (real_T*)
+        double *Bs = (double*)
           BoostConverterModel_ControlS_DW.StateSpace_PWORK.BS;
-        real_T *Ds = (real_T*)
+        double *Ds = (double*)
           BoostConverterModel_ControlS_DW.StateSpace_PWORK.DS;
-        real_T a1;
+        double a1;
 
         {
-          int_T i1;
+          int i1;
           for (i1=0; i1 < 2; i1++) {
             if (SwitchChange[i1] != 0) {
               a1 = 1000.0*SwitchChange[i1];
               temp = 1/(1-Ds[i1*10]*a1);
 
               {
-                int_T i2;
+                int i2;
                 for (i2=0; i2 < 12; i2++) {
                   DxCol[i2]= Ds[i2 * 9 + i1]*temp*a1;
                 }
@@ -589,22 +590,22 @@ void BoostConverterModel_ControlSystem_step(void)
               BDcol[0]= Bs[0 + i1]*a1;
 
               /* Copy row nSw of Cs into tmp1 and zero it out in Cs */
-              memcpy(tmp1, &Cs[i1 * 1], 1 * sizeof(real_T));
-              memset(&Cs[i1 * 1], '\0', 1 * sizeof(real_T));
+              memcpy(tmp1, &Cs[i1 * 1], 1 * sizeof(double));
+              memset(&Cs[i1 * 1], '\0', 1 * sizeof(double));
 
               /* Copy row nSw of Ds into tmp2 and zero it out in Ds */
-              memcpy(tmp2, &Ds[i1 * 9], 9 * sizeof(real_T));
-              memset(&Ds[i1 * 9], '\0', 9 * sizeof(real_T));
+              memcpy(tmp2, &Ds[i1 * 9], 9 * sizeof(double));
+              memset(&Ds[i1 * 9], '\0', 9 * sizeof(double));
 
               /* Cs = Cs + DxCol * tmp1, Ds = Ds + DxCol * tmp2 *******************/
               {
-                int_T i2;
+                int i2;
                 for (i2=0; i2 < 12; i2++) {
                   a1 = DxCol[i2];
                   Cs[i2 * 1 + 0] += a1 * tmp1[0];
 
                   {
-                    int_T i3;
+                    int i3;
                     for (i3=0; i3 < 9; i3++) {
                       Ds[i2 * 9 + i3] += a1 * tmp2[i3];
                     }
@@ -617,7 +618,7 @@ void BoostConverterModel_ControlSystem_step(void)
               As[0 + 0] += a1 * Cs[i1 * 1 + 0];
 
               {
-                int_T i2;
+                int i2;
                 for (i2=0; i2 < 9; i2++) {
                   Bs[0 + i2] += a1 * Ds[i1 * 9 + i2];
                 }
@@ -629,12 +630,12 @@ void BoostConverterModel_ControlSystem_step(void)
     } while (swChanged > 0 && --loopsToDo > 0);
 
     if (loopsToDo == 0) {
-      real_T *Cs = (real_T*)BoostConverterModel_ControlS_DW.StateSpace_PWORK.CS;
-      real_T *Ds = (real_T*)BoostConverterModel_ControlS_DW.StateSpace_PWORK.DS;
+      double *Cs = (double*)BoostConverterModel_ControlS_DW.StateSpace_PWORK.CS;
+      double *Ds = (double*)BoostConverterModel_ControlS_DW.StateSpace_PWORK.DS;
 
       {
-        int_T i1;
-        real_T *y0 = &BoostConverterModel_ControlSy_B.StateSpace_o1[0];
+        int i1;
+        double *y0 = &BoostConverterModel_ControlSy_B.StateSpace_o1[0];
         for (i1=0; i1 < 12; i1++) {
           accum = 0.0;
           accum += *(Cs++) * BoostConverterModel_ControlS_DW.StateSpace_DSTATE;
@@ -653,8 +654,8 @@ void BoostConverterModel_ControlSystem_step(void)
     }
 
     /* Output new switches states */
-    BoostConverterModel_ControlSy_B.StateSpace_o2[0] = (real_T)switch_status[0];
-    BoostConverterModel_ControlSy_B.StateSpace_o2[1] = (real_T)switch_status[1];
+    BoostConverterModel_ControlSy_B.StateSpace_o2[0] = (double)switch_status[0];
+    BoostConverterModel_ControlSy_B.StateSpace_o2[1] = (double)switch_status[1];
   }
 
   /* MATLAB Function: '<S317>/MATLAB Function1' */
@@ -736,13 +737,13 @@ void BoostConverterModel_ControlSystem_step(void)
 
   /* S-Function block: <S352>/State-Space */
   {
-    const real_T *As = (real_T*)
+    const double *As = (double*)
       BoostConverterModel_ControlS_DW.StateSpace_PWORK.AS;
-    const real_T *Bs = (real_T*)
+    const double *Bs = (double*)
       BoostConverterModel_ControlS_DW.StateSpace_PWORK.BS;
-    real_T *xtmp = (real_T*)
+    double *xtmp = (double*)
       BoostConverterModel_ControlS_DW.StateSpace_PWORK.XTMP;
-    real_T accum;
+    double accum;
 
     /* Calculate new states... */
     accum = 0.0;
@@ -760,12 +761,12 @@ void BoostConverterModel_ControlSystem_step(void)
     BoostConverterModel_ControlS_DW.StateSpace_DSTATE = xtmp[0];
 
     {
-      int_T *gState = (int_T*)
+      int *gState = (int*)
         BoostConverterModel_ControlS_DW.StateSpace_PWORK.G_STATE;
 
       /* Store switch gates values for next step */
-      *(gState++) = (int_T) 0.0;
-      *(gState++) = (int_T) 0.0;
+      *(gState++) = (int) 0.0;
+      *(gState++) = (int) 0.0;
     }
   }
 
@@ -784,40 +785,40 @@ void BoostConverterModel_ControlSystem_initialize(void)
 
   /* S-Function block: <S352>/State-Space */
   {
-    BoostConverterModel_ControlS_DW.StateSpace_PWORK.AS = (real_T*)calloc(1 * 1,
-      sizeof(real_T));
-    BoostConverterModel_ControlS_DW.StateSpace_PWORK.BS = (real_T*)calloc(1 * 9,
-      sizeof(real_T));
-    BoostConverterModel_ControlS_DW.StateSpace_PWORK.CS = (real_T*)calloc(12 * 1,
-      sizeof(real_T));
-    BoostConverterModel_ControlS_DW.StateSpace_PWORK.DS = (real_T*)calloc(12 * 9,
-      sizeof(real_T));
-    BoostConverterModel_ControlS_DW.StateSpace_PWORK.DX_COL = (real_T*)calloc(12,
-      sizeof(real_T));
-    BoostConverterModel_ControlS_DW.StateSpace_PWORK.TMP2 = (real_T*)calloc(9,
-      sizeof(real_T));
-    BoostConverterModel_ControlS_DW.StateSpace_PWORK.BD_COL = (real_T*)calloc(1,
-      sizeof(real_T));
-    BoostConverterModel_ControlS_DW.StateSpace_PWORK.TMP1 = (real_T*)calloc(1,
-      sizeof(real_T));
-    BoostConverterModel_ControlS_DW.StateSpace_PWORK.XTMP = (real_T*)calloc(1,
-      sizeof(real_T));
-    BoostConverterModel_ControlS_DW.StateSpace_PWORK.SWITCH_STATUS = (int_T*)
-      calloc(2, sizeof(int_T));
-    BoostConverterModel_ControlS_DW.StateSpace_PWORK.SW_CHG = (int_T*)calloc(2,
-      sizeof(int_T));
-    BoostConverterModel_ControlS_DW.StateSpace_PWORK.G_STATE = (int_T*)calloc(2,
-      sizeof(int_T));
-    BoostConverterModel_ControlS_DW.StateSpace_PWORK.Y_SWITCH = (real_T*)calloc
-      (2, sizeof(real_T));
-    BoostConverterModel_ControlS_DW.StateSpace_PWORK.SWITCH_TYPES = (int_T*)
-      calloc(2, sizeof(int_T));
-    BoostConverterModel_ControlS_DW.StateSpace_PWORK.IDX_OUT_SW = (int_T*)calloc
-      (2, sizeof(int_T));
-    BoostConverterModel_ControlS_DW.StateSpace_PWORK.SWITCH_STATUS_INIT = (int_T*)
-      calloc(2, sizeof(int_T));
-    BoostConverterModel_ControlS_DW.StateSpace_PWORK.USWLAST = (real_T*)calloc(2,
-      sizeof(real_T));
+    BoostConverterModel_ControlS_DW.StateSpace_PWORK.AS = (double*)calloc(1 * 1,
+      sizeof(double));
+    BoostConverterModel_ControlS_DW.StateSpace_PWORK.BS = (double*)calloc(1 * 9,
+      sizeof(double));
+    BoostConverterModel_ControlS_DW.StateSpace_PWORK.CS = (double*)calloc(12 * 1,
+      sizeof(double));
+    BoostConverterModel_ControlS_DW.StateSpace_PWORK.DS = (double*)calloc(12 * 9,
+      sizeof(double));
+    BoostConverterModel_ControlS_DW.StateSpace_PWORK.DX_COL = (double*)calloc(12,
+      sizeof(double));
+    BoostConverterModel_ControlS_DW.StateSpace_PWORK.TMP2 = (double*)calloc(9,
+      sizeof(double));
+    BoostConverterModel_ControlS_DW.StateSpace_PWORK.BD_COL = (double*)calloc(1,
+      sizeof(double));
+    BoostConverterModel_ControlS_DW.StateSpace_PWORK.TMP1 = (double*)calloc(1,
+      sizeof(double));
+    BoostConverterModel_ControlS_DW.StateSpace_PWORK.XTMP = (double*)calloc(1,
+      sizeof(double));
+    BoostConverterModel_ControlS_DW.StateSpace_PWORK.SWITCH_STATUS = (int*)
+      calloc(2, sizeof(int));
+    BoostConverterModel_ControlS_DW.StateSpace_PWORK.SW_CHG = (int*)calloc(2,
+      sizeof(int));
+    BoostConverterModel_ControlS_DW.StateSpace_PWORK.G_STATE = (int*)calloc(2,
+      sizeof(int));
+    BoostConverterModel_ControlS_DW.StateSpace_PWORK.Y_SWITCH = (double*)calloc
+      (2, sizeof(double));
+    BoostConverterModel_ControlS_DW.StateSpace_PWORK.SWITCH_TYPES = (int*)calloc
+      (2, sizeof(int));
+    BoostConverterModel_ControlS_DW.StateSpace_PWORK.IDX_OUT_SW = (int*)calloc(2,
+      sizeof(int));
+    BoostConverterModel_ControlS_DW.StateSpace_PWORK.SWITCH_STATUS_INIT = (int*)
+      calloc(2, sizeof(int));
+    BoostConverterModel_ControlS_DW.StateSpace_PWORK.USWLAST = (double*)calloc(2,
+      sizeof(double));
   }
 
   /* InitializeConditions for S-Function (sfun_spssw_discc): '<S352>/State-Space' incorporates:
@@ -827,12 +828,12 @@ void BoostConverterModel_ControlSystem_initialize(void)
    *  Constant: '<S354>/SwitchCurrents'
    */
   {
-    int32_T i, j;
-    real_T *As = (real_T*)BoostConverterModel_ControlS_DW.StateSpace_PWORK.AS;
-    real_T *Bs = (real_T*)BoostConverterModel_ControlS_DW.StateSpace_PWORK.BS;
-    real_T *Cs = (real_T*)BoostConverterModel_ControlS_DW.StateSpace_PWORK.CS;
-    real_T *Ds = (real_T*)BoostConverterModel_ControlS_DW.StateSpace_PWORK.DS;
-    real_T *X0 = (real_T*)&BoostConverterModel_ControlS_DW.StateSpace_DSTATE;
+    int32_t i, j;
+    double *As = (double*)BoostConverterModel_ControlS_DW.StateSpace_PWORK.AS;
+    double *Bs = (double*)BoostConverterModel_ControlS_DW.StateSpace_PWORK.BS;
+    double *Cs = (double*)BoostConverterModel_ControlS_DW.StateSpace_PWORK.CS;
+    double *Ds = (double*)BoostConverterModel_ControlS_DW.StateSpace_PWORK.DS;
+    double *X0 = (double*)&BoostConverterModel_ControlS_DW.StateSpace_DSTATE;
     for (i = 0; i < 1; i++) {
       X0[i] = 1199.5502293745199;
     }
@@ -862,32 +863,32 @@ void BoostConverterModel_ControlSystem_initialize(void)
 
     {
       /* Switches work vectors */
-      int_T *switch_status = (int_T*)
+      int *switch_status = (int*)
         BoostConverterModel_ControlS_DW.StateSpace_PWORK.SWITCH_STATUS;
-      int_T *gState = (int_T*)
+      int *gState = (int*)
         BoostConverterModel_ControlS_DW.StateSpace_PWORK.G_STATE;
-      real_T *yswitch = (real_T*)
+      double *yswitch = (double*)
         BoostConverterModel_ControlS_DW.StateSpace_PWORK.Y_SWITCH;
-      int_T *switchTypes = (int_T*)
+      int *switchTypes = (int*)
         BoostConverterModel_ControlS_DW.StateSpace_PWORK.SWITCH_TYPES;
-      int_T *idxOutSw = (int_T*)
+      int *idxOutSw = (int*)
         BoostConverterModel_ControlS_DW.StateSpace_PWORK.IDX_OUT_SW;
-      int_T *switch_status_init = (int_T*)
+      int *switch_status_init = (int*)
         BoostConverterModel_ControlS_DW.StateSpace_PWORK.SWITCH_STATUS_INIT;
 
       /* Initialize work vectors */
       switch_status[0] = 0;
       switch_status_init[0] = 0;
-      gState[0] = (int_T) 0.0;
+      gState[0] = (int) 0.0;
       yswitch[0] = 1/0.001;
-      switchTypes[0] = (int_T)3.0;
-      idxOutSw[0] = ((int_T)0.0) - 1;
+      switchTypes[0] = (int)3.0;
+      idxOutSw[0] = ((int)0.0) - 1;
       switch_status[1] = 0;
       switch_status_init[1] = 0;
-      gState[1] = (int_T) 0.0;
+      gState[1] = (int) 0.0;
       yswitch[1] = 1/0.001;
-      switchTypes[1] = (int_T)3.0;
-      idxOutSw[1] = ((int_T)0.0) - 1;
+      switchTypes[1] = (int)3.0;
+      idxOutSw[1] = ((int)0.0) - 1;
     }
   }
 }

@@ -9,7 +9,7 @@
  *
  * Model version                  : 1.418
  * Simulink Coder version         : 23.2 (R2023b) 01-Aug-2023
- * C/C++ source code generated on : Tue Sep 30 18:00:25 2025
+ * C/C++ source code generated on : Tue Sep 30 18:06:06 2025
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: ARM Compatible->ARM Cortex
@@ -21,7 +21,9 @@
 #define RTW_HEADER_BoostConverterModel_ControlSystem_h_
 #ifndef BoostConverterModel_ControlSystem_COMMON_INCLUDES_
 #define BoostConverterModel_ControlSystem_COMMON_INCLUDES_
-#include "rtwtypes.h"
+#include <stdbool.h>
+#include <stdint.h>
+#include "complex_types.h"
 #endif                  /* BoostConverterModel_ControlSystem_COMMON_INCLUDES_ */
 
 /* Macros for accessing real-time model data structure */
@@ -40,38 +42,38 @@ typedef struct tag_RTM_BoostConverterModel_C_T RT_MODEL_BoostConverterModel__T;
 
 /* Block signals (default storage) */
 typedef struct {
-  real_T Sum;                          /* '<S50>/Sum' */
-  real_T Product1;                     /* '<S317>/Product1' */
-  real_T Product1_g;                   /* '<S331>/Product1' */
-  real_T UnitDelay1;                   /* '<S317>/Unit Delay1' */
-  real_T UnitDelay1_b;                 /* '<S331>/Unit Delay1' */
-  real_T StateSpace_o1[12];            /* '<S352>/State-Space' */
-  real_T StateSpace_o2[2];             /* '<S352>/State-Space' */
-  real_T V;                            /* '<S331>/MATLAB Function2' */
-  real_T V_l;                          /* '<S317>/MATLAB Function2' */
-  real_T UnitDelay3;                   /* '<S1>/Unit Delay3' */
-  real_T Idc;                          /* '<S317>/MATLAB Function1' */
-  real_T IntegralGain;                 /* '<S38>/Integral Gain' */
+  double Sum;                          /* '<S50>/Sum' */
+  double Product1;                     /* '<S317>/Product1' */
+  double Product1_g;                   /* '<S331>/Product1' */
+  double UnitDelay1;                   /* '<S317>/Unit Delay1' */
+  double UnitDelay1_b;                 /* '<S331>/Unit Delay1' */
+  double StateSpace_o1[12];            /* '<S352>/State-Space' */
+  double StateSpace_o2[2];             /* '<S352>/State-Space' */
+  double V;                            /* '<S331>/MATLAB Function2' */
+  double V_l;                          /* '<S317>/MATLAB Function2' */
+  double UnitDelay3;                   /* '<S1>/Unit Delay3' */
+  double Idc;                          /* '<S317>/MATLAB Function1' */
+  double IntegralGain;                 /* '<S38>/Integral Gain' */
 } B_BoostConverterModel_Control_T;
 
 /* Block states (default storage) for system '<Root>' */
 typedef struct {
-  real_T UnitDelay3_DSTATE;            /* '<S1>/Unit Delay3' */
-  real_T UnitDelay4_DSTATE;            /* '<S1>/Unit Delay4' */
-  real_T Integrator_DSTATE;            /* '<S41>/Integrator' */
-  real_T UnitDelay2_DSTATE;            /* '<S1>/Unit Delay2' */
-  real_T UnitDelay1_DSTATE;            /* '<S1>/Unit Delay1' */
-  real_T UnitDelay_DSTATE;             /* '<S1>/Unit Delay' */
-  real_T Integrator_DSTATE_g;          /* '<S91>/Integrator' */
-  real_T Filter_DSTATE;                /* '<S86>/Filter' */
-  real_T Integrator_DSTATE_o;          /* '<S141>/Integrator' */
-  real_T Filter_DSTATE_m;              /* '<S136>/Filter' */
-  real_T UnitDelay2_DSTATE_c;          /* '<S317>/Unit Delay2' */
-  real_T UnitDelay2_DSTATE_d;          /* '<S331>/Unit Delay2' */
-  real_T UnitDelay1_DSTATE_f;          /* '<S317>/Unit Delay1' */
-  real_T UnitDelay1_DSTATE_h;          /* '<S331>/Unit Delay1' */
-  real_T StateSpace_DSTATE;            /* '<S352>/State-Space' */
-  real_T Integrator_DSTATE_n;          /* '<S190>/Integrator' */
+  double UnitDelay3_DSTATE;            /* '<S1>/Unit Delay3' */
+  double UnitDelay4_DSTATE;            /* '<S1>/Unit Delay4' */
+  double Integrator_DSTATE;            /* '<S41>/Integrator' */
+  double UnitDelay2_DSTATE;            /* '<S1>/Unit Delay2' */
+  double UnitDelay1_DSTATE;            /* '<S1>/Unit Delay1' */
+  double UnitDelay_DSTATE;             /* '<S1>/Unit Delay' */
+  double Integrator_DSTATE_g;          /* '<S91>/Integrator' */
+  double Filter_DSTATE;                /* '<S86>/Filter' */
+  double Integrator_DSTATE_o;          /* '<S141>/Integrator' */
+  double Filter_DSTATE_m;              /* '<S136>/Filter' */
+  double UnitDelay2_DSTATE_c;          /* '<S317>/Unit Delay2' */
+  double UnitDelay2_DSTATE_d;          /* '<S331>/Unit Delay2' */
+  double UnitDelay1_DSTATE_f;          /* '<S317>/Unit Delay1' */
+  double UnitDelay1_DSTATE_h;          /* '<S331>/Unit Delay1' */
+  double StateSpace_DSTATE;            /* '<S352>/State-Space' */
+  double Integrator_DSTATE_n;          /* '<S190>/Integrator' */
   struct {
     void *AS;
     void *BS;
@@ -99,15 +101,15 @@ typedef struct {
     void *SWITCH_MAP;
   } StateSpace_PWORK;                  /* '<S352>/State-Space' */
 
-  int_T StateSpace_IWORK[11];          /* '<S352>/State-Space' */
+  int StateSpace_IWORK[11];            /* '<S352>/State-Space' */
 } DW_BoostConverterModel_Contro_T;
 
 /* Invariant block signals (default storage) */
 typedef struct {
-  const real_T DataTypeConversion1;    /* '<S317>/Data Type Conversion1' */
-  const real_T DataTypeConversion1_f;  /* '<S331>/Data Type Conversion1' */
-  const boolean_T Compare;             /* '<S319>/Compare' */
-  const boolean_T Compare_k;           /* '<S333>/Compare' */
+  const double DataTypeConversion1;    /* '<S317>/Data Type Conversion1' */
+  const double DataTypeConversion1_f;  /* '<S331>/Data Type Conversion1' */
+  const bool Compare;                  /* '<S319>/Compare' */
+  const bool Compare_k;                /* '<S333>/Compare' */
 } ConstB_BoostConverterModel_Co_T;
 
 /* Constant parameters (default storage) */
@@ -115,22 +117,22 @@ typedef struct {
   /* Expression: S.B
    * Referenced by: '<S352>/State-Space'
    */
-  real_T StateSpace_BS_param[9];
+  double StateSpace_BS_param[9];
 
   /* Expression: S.C
    * Referenced by: '<S352>/State-Space'
    */
-  real_T StateSpace_CS_param[12];
+  double StateSpace_CS_param[12];
 
   /* Expression: S.D
    * Referenced by: '<S352>/State-Space'
    */
-  real_T StateSpace_DS_param[108];
+  double StateSpace_DS_param[108];
 } ConstP_BoostConverterModel_Co_T;
 
 /* Real-time Model Data Structure */
 struct tag_RTM_BoostConverterModel_C_T {
-  const char_T * volatile errorStatus;
+  const char * volatile errorStatus;
 
   /*
    * Timing:
@@ -139,7 +141,7 @@ struct tag_RTM_BoostConverterModel_C_T {
    */
   struct {
     struct {
-      uint8_T TID[2];
+      uint8_t TID[2];
     } TaskCounters;
   } Timing;
 };
