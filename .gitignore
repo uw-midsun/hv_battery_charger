@@ -20,6 +20,10 @@ CMakeUserPresets.json
 
 build
 .cache
+.vscode/
 
 slprj/
 *.slx.*
+**.slxc
+**.exe
+**_rtw
