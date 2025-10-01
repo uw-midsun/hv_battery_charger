@@ -18,9 +18,6 @@
 #include "stm32f334x8.h"
 #include "application.h"
 
-void SystemClock_Config(void);
-static void MX_GPIO_Init(void);
-
 void led_init() {
   GPIO_InitTypeDef GPIO_InitStruct;
   
