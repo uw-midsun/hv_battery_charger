@@ -528,12 +528,12 @@ extern "C" {
                        temperature sensor has been calibrated in production \
                        (tolerance: +-10 mV) (unit: mV). */
 /* Temperature sensor */
-#define TEMPSENSOR_CAL1_ADDR                                               \
-  ((uint16_t *)((                                                          \
-      uint32_t)0x1FFFF7B8U)) /* Internal temperature sensor, address of    \
-                                parameter TS_CAL1: On STM32F3, temperature \
-                                sensor ADC raw data acquired at temperature 30                                                                        \
-                                DegC (tolerance: +-5 DegC), Vref+ = 3.3 V  \
+#define TEMPSENSOR_CAL1_ADDR                                                   \
+  ((uint16_t *)((                                                              \
+      uint32_t)0x1FFFF7B8U)) /* Internal temperature sensor, address of        \
+                                parameter TS_CAL1: On STM32F3, temperature     \
+                                sensor ADC raw data acquired at temperature 30 \
+                                DegC (tolerance: +-5 DegC), Vref+ = 3.3 V      \
                                 (tolerance: +-10 mV). */
 #define TEMPSENSOR_CAL2_ADDR                                                  \
   ((uint16_t *)((                                                             \
@@ -9656,12 +9656,12 @@ void LL_ADC_INJ_StructInit(LL_ADC_INJ_InitTypeDef *ADC_INJ_InitStruct);
                        temperature sensor has been calibrated in production \
                        (tolerance: +-10 mV) (unit: mV). */
 /* Temperature sensor */
-#define TEMPSENSOR_CAL1_ADDR                                                 \
-  ((uint16_t *)((                                                            \
-      uint32_t)0x1FFFF7B8U)) /* Internal temperature sensor, address of      \
-                                parameter TS_CAL1: On STM32F37x, temperature \
-                                sensor ADC raw data acquired at temperature 30                                                                          \
-                                DegC (tolerance: +-5 DegC), Vref+ = 3.3 V    \
+#define TEMPSENSOR_CAL1_ADDR                                                   \
+  ((uint16_t *)((                                                              \
+      uint32_t)0x1FFFF7B8U)) /* Internal temperature sensor, address of        \
+                                parameter TS_CAL1: On STM32F37x, temperature   \
+                                sensor ADC raw data acquired at temperature 30 \
+                                DegC (tolerance: +-5 DegC), Vref+ = 3.3 V      \
                                 (tolerance: +-10 mV). */
 #define TEMPSENSOR_CAL2_ADDR                                                  \
   ((uint16_t *)((                                                             \

@@ -194,7 +194,8 @@ typedef struct {
 #define LL_RCC_CSR_SFTRSTF RCC_CSR_SFTRSTF /*!< Software Reset flag */
 #define LL_RCC_CSR_IWDGRSTF \
   RCC_CSR_IWDGRSTF /*!< Independent Watchdog reset flag */
-#define LL_RCC_CSR_WWDGRSTF RCC_CSR_WWDGRSTF /*!< Window watchdog reset flag \
+#define LL_RCC_CSR_WWDGRSTF                                                  \
+  RCC_CSR_WWDGRSTF                           /*!< Window watchdog reset flag \
                                               */
 #define LL_RCC_CSR_LPWRRSTF RCC_CSR_LPWRRSTF /*!< Low-Power reset flag */
 #if defined(RCC_CSR_V18PWRRSTF)
@@ -210,16 +211,21 @@ typedef struct {
  * LL_RCC_WriteReg functions
  * @{
  */
-#define LL_RCC_CIR_LSIRDYIE RCC_CIR_LSIRDYIE /*!< LSI Ready Interrupt Enable \
-                                              */
-#define LL_RCC_CIR_LSERDYIE RCC_CIR_LSERDYIE /*!< LSE Ready Interrupt Enable \
-                                              */
-#define LL_RCC_CIR_HSIRDYIE RCC_CIR_HSIRDYIE /*!< HSI Ready Interrupt Enable \
-                                              */
-#define LL_RCC_CIR_HSERDYIE RCC_CIR_HSERDYIE /*!< HSE Ready Interrupt Enable \
-                                              */
-#define LL_RCC_CIR_PLLRDYIE RCC_CIR_PLLRDYIE /*!< PLL Ready Interrupt Enable \
-                                              */
+#define LL_RCC_CIR_LSIRDYIE                        \
+  RCC_CIR_LSIRDYIE /*!< LSI Ready Interrupt Enable \
+                    */
+#define LL_RCC_CIR_LSERDYIE                        \
+  RCC_CIR_LSERDYIE /*!< LSE Ready Interrupt Enable \
+                    */
+#define LL_RCC_CIR_HSIRDYIE                        \
+  RCC_CIR_HSIRDYIE /*!< HSI Ready Interrupt Enable \
+                    */
+#define LL_RCC_CIR_HSERDYIE                        \
+  RCC_CIR_HSERDYIE /*!< HSE Ready Interrupt Enable \
+                    */
+#define LL_RCC_CIR_PLLRDYIE                        \
+  RCC_CIR_PLLRDYIE /*!< PLL Ready Interrupt Enable \
+                    */
 /**
  * @}
  */
@@ -268,18 +274,21 @@ typedef struct {
 /** @defgroup RCC_LL_EC_SYSCLK_DIV  AHB prescaler
  * @{
  */
-#define LL_RCC_SYSCLK_DIV_1 RCC_CFGR_HPRE_DIV1     /*!< SYSCLK not divided */
-#define LL_RCC_SYSCLK_DIV_2 RCC_CFGR_HPRE_DIV2     /*!< SYSCLK divided by 2 */
-#define LL_RCC_SYSCLK_DIV_4 RCC_CFGR_HPRE_DIV4     /*!< SYSCLK divided by 4 */
-#define LL_RCC_SYSCLK_DIV_8 RCC_CFGR_HPRE_DIV8     /*!< SYSCLK divided by 8 */
-#define LL_RCC_SYSCLK_DIV_16 RCC_CFGR_HPRE_DIV16   /*!< SYSCLK divided by 16 */
-#define LL_RCC_SYSCLK_DIV_64 RCC_CFGR_HPRE_DIV64   /*!< SYSCLK divided by 64 */
-#define LL_RCC_SYSCLK_DIV_128 RCC_CFGR_HPRE_DIV128 /*!< SYSCLK divided by 128 \
-                                                    */
-#define LL_RCC_SYSCLK_DIV_256 RCC_CFGR_HPRE_DIV256 /*!< SYSCLK divided by 256 \
-                                                    */
-#define LL_RCC_SYSCLK_DIV_512 RCC_CFGR_HPRE_DIV512 /*!< SYSCLK divided by 512 \
-                                                    */
+#define LL_RCC_SYSCLK_DIV_1 RCC_CFGR_HPRE_DIV1   /*!< SYSCLK not divided */
+#define LL_RCC_SYSCLK_DIV_2 RCC_CFGR_HPRE_DIV2   /*!< SYSCLK divided by 2 */
+#define LL_RCC_SYSCLK_DIV_4 RCC_CFGR_HPRE_DIV4   /*!< SYSCLK divided by 4 */
+#define LL_RCC_SYSCLK_DIV_8 RCC_CFGR_HPRE_DIV8   /*!< SYSCLK divided by 8 */
+#define LL_RCC_SYSCLK_DIV_16 RCC_CFGR_HPRE_DIV16 /*!< SYSCLK divided by 16 */
+#define LL_RCC_SYSCLK_DIV_64 RCC_CFGR_HPRE_DIV64 /*!< SYSCLK divided by 64 */
+#define LL_RCC_SYSCLK_DIV_128                     \
+  RCC_CFGR_HPRE_DIV128 /*!< SYSCLK divided by 128 \
+                        */
+#define LL_RCC_SYSCLK_DIV_256                     \
+  RCC_CFGR_HPRE_DIV256 /*!< SYSCLK divided by 256 \
+                        */
+#define LL_RCC_SYSCLK_DIV_512                     \
+  RCC_CFGR_HPRE_DIV512 /*!< SYSCLK divided by 512 \
+                        */
 /**
  * @}
  */
@@ -336,18 +345,22 @@ typedef struct {
 /** @defgroup RCC_LL_EC_MCO1_DIV  MCO1 prescaler
  * @{
  */
-#define LL_RCC_MCO1_DIV_1 ((uint32_t)0x00000000U) /*!< MCO Clock divided by 1 \
-                                                   */
+#define LL_RCC_MCO1_DIV_1                             \
+  ((uint32_t)0x00000000U) /*!< MCO Clock divided by 1 \
+                           */
 #if defined(RCC_CFGR_MCOPRE)
-#define LL_RCC_MCO1_DIV_2 RCC_CFGR_MCOPRE_DIV2   /*!< MCO Clock divided by 2 */
-#define LL_RCC_MCO1_DIV_4 RCC_CFGR_MCOPRE_DIV4   /*!< MCO Clock divided by 4 */
-#define LL_RCC_MCO1_DIV_8 RCC_CFGR_MCOPRE_DIV8   /*!< MCO Clock divided by 8 */
-#define LL_RCC_MCO1_DIV_16 RCC_CFGR_MCOPRE_DIV16 /*!< MCO Clock divided by 16 \
-                                                  */
-#define LL_RCC_MCO1_DIV_32 RCC_CFGR_MCOPRE_DIV32 /*!< MCO Clock divided by 32 \
-                                                  */
-#define LL_RCC_MCO1_DIV_64 RCC_CFGR_MCOPRE_DIV64 /*!< MCO Clock divided by 64 \
-                                                  */
+#define LL_RCC_MCO1_DIV_2 RCC_CFGR_MCOPRE_DIV2 /*!< MCO Clock divided by 2 */
+#define LL_RCC_MCO1_DIV_4 RCC_CFGR_MCOPRE_DIV4 /*!< MCO Clock divided by 4 */
+#define LL_RCC_MCO1_DIV_8 RCC_CFGR_MCOPRE_DIV8 /*!< MCO Clock divided by 8 */
+#define LL_RCC_MCO1_DIV_16                           \
+  RCC_CFGR_MCOPRE_DIV16 /*!< MCO Clock divided by 16 \
+                         */
+#define LL_RCC_MCO1_DIV_32                           \
+  RCC_CFGR_MCOPRE_DIV32 /*!< MCO Clock divided by 32 \
+                         */
+#define LL_RCC_MCO1_DIV_64                           \
+  RCC_CFGR_MCOPRE_DIV64 /*!< MCO Clock divided by 64 \
+                         */
 #define LL_RCC_MCO1_DIV_128 \
   RCC_CFGR_MCOPRE_DIV128 /*!< MCO Clock divided by 128 */
 #endif                   /* RCC_CFGR_MCOPRE */
@@ -929,8 +942,9 @@ typedef struct {
 /** @defgroup RCC_LL_EC_I2S Peripheral I2S get clock source
  * @{
  */
-#define LL_RCC_I2S_CLKSOURCE RCC_CFGR_I2SSRC /*!< I2S Clock source selection \
-                                              */
+#define LL_RCC_I2S_CLKSOURCE                      \
+  RCC_CFGR_I2SSRC /*!< I2S Clock source selection \
+                   */
 /**
  * @}
  */
@@ -1001,8 +1015,9 @@ typedef struct {
 /** @defgroup RCC_LL_EC_CEC Peripheral CEC get clock source
  * @{
  */
-#define LL_RCC_CEC_CLKSOURCE RCC_CFGR3_CECSW /*!< CEC Clock source selection \
-                                              */
+#define LL_RCC_CEC_CLKSOURCE                      \
+  RCC_CFGR3_CECSW /*!< CEC Clock source selection \
+                   */
 /**
  * @}
  */
@@ -1013,8 +1028,9 @@ typedef struct {
 /** @defgroup RCC_LL_EC_USB Peripheral USB get clock source
  * @{
  */
-#define LL_RCC_USB_CLKSOURCE RCC_CFGR_USBPRE /*!< USB Clock source selection \
-                                              */
+#define LL_RCC_USB_CLKSOURCE                      \
+  RCC_CFGR_USBPRE /*!< USB Clock source selection \
+                   */
 /**
  * @}
  */
@@ -1025,8 +1041,9 @@ typedef struct {
 /** @defgroup RCC_LL_EC_ADC Peripheral ADC get clock source
  * @{
  */
-#define LL_RCC_ADC_CLKSOURCE RCC_CFGR_ADCPRE /*!< ADC Clock source selection \
-                                              */
+#define LL_RCC_ADC_CLKSOURCE                      \
+  RCC_CFGR_ADCPRE /*!< ADC Clock source selection \
+                   */
 /**
  * @}
  */
@@ -1070,8 +1087,9 @@ typedef struct {
 /** @defgroup RCC_LL_EC_RTC_CLKSOURCE  RTC clock source selection
  * @{
  */
-#define LL_RCC_RTC_CLKSOURCE_NONE 0x00000000U /*!< No clock used as RTC clock \
-                                               */
+#define LL_RCC_RTC_CLKSOURCE_NONE             \
+  0x00000000U /*!< No clock used as RTC clock \
+               */
 #define LL_RCC_RTC_CLKSOURCE_LSE \
   RCC_BDCR_RTCSEL_0 /*!< LSE oscillator clock used as RTC clock */
 #define LL_RCC_RTC_CLKSOURCE_LSI \

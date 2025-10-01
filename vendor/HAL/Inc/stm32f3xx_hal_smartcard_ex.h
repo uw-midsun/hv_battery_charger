@@ -140,8 +140,9 @@ extern "C" {
 #define SMARTCARD_IT_FE 0x0100U  /*!< SMARTCARD frame error interruption   */
 
 #define SMARTCARD_IT_EOB 0x0C3BU /*!< SMARTCARD end of block interruption */
-#define SMARTCARD_IT_RTO 0x0B3AU /*!< SMARTCARD receiver timeout interruption \
-                                  */
+#define SMARTCARD_IT_RTO                               \
+  0x0B3AU /*!< SMARTCARD receiver timeout interruption \
+           */
 
 /**
  * @}

@@ -20,6 +20,7 @@
  */
 
 #include "Controller.h"
+
 #include "rtwtypes.h"
 
 /* Block signals and states (default storage) */
@@ -41,21 +42,20 @@ static void rate_scheduler(void);
  *         The function is called at model base rate, hence the
  *         generated code self-manages all its subrates.
  */
-static void rate_scheduler(void)
-{
+static void rate_scheduler(void) {
   /* Compute which subrates run during the next base time step.  Subrates
    * are an integer multiple of the base rate counter.  Therefore, the subtask
    * counter is reset when it reaches its limit (zero means run).
    */
   (rtM->Timing.TaskCounters.TID[1])++;
-  if ((rtM->Timing.TaskCounters.TID[1]) > 9) {/* Sample time: [0.0001s, 0.0s] */
+  if ((rtM->Timing.TaskCounters.TID[1]) >
+      9) { /* Sample time: [0.0001s, 0.0s] */
     rtM->Timing.TaskCounters.TID[1] = 0;
   }
 }
 
 /* Model step function */
-void Controller_step(void)
-{
+void Controller_step(void) {
   real_T Sum3;
   real_T rtb_DeadZone;
   real_T rtb_DeadZone_e;
@@ -83,143 +83,143 @@ void Controller_step(void)
    *  Inport: '<Root>/User_ModeSelect'
    */
   switch ((int32_T)rtU.User_ModeSelect) {
-   case 1:
-    /* Outputs for IfAction SubSystem: '<S1>/Switch Case Action Subsystem' incorporates:
-     *  ActionPort: '<S5>/Action Port'
-     */
-    /* Sum: '<S5>/Sum1' incorporates:
-     *  Inport: '<Root>/User_TargetVoltage'
-     *  UnitDelay: '<S1>/Unit Delay'
-     */
-    rtb_Sum1_m = rtU.User_TargetVoltage - rtDW.UnitDelay_DSTATE;
-
-    /* Sum: '<S198>/Sum' incorporates:
-     *  DiscreteIntegrator: '<S189>/Integrator'
-     *  Gain: '<S194>/Proportional Gain'
-     */
-    rtDW.Gain = 2.5 * rtb_Sum1_m + rtDW.Integrator_DSTATE_n;
-
-    /* Update for DiscreteIntegrator: '<S189>/Integrator' incorporates:
-     *  Gain: '<S186>/Integral Gain'
-     */
-    rtDW.Integrator_DSTATE_n += 5.0E-5 * rtb_Sum1_m;
-
-    /* End of Outputs for SubSystem: '<S1>/Switch Case Action Subsystem' */
-    break;
-
-   case 2:
-    /* Outputs for IfAction SubSystem: '<S1>/Switch Case Action Subsystem1' incorporates:
-     *  ActionPort: '<S6>/Action Port'
-     */
-    /* Sum: '<S6>/Sum1' incorporates:
-     *  Inport: '<Root>/User_TargetCurrent'
-     *  UnitDelay: '<S1>/Unit Delay1'
-     */
-    rtb_Sum1_m = rtU.User_TargetCurrent - rtDW.UnitDelay1_DSTATE;
-
-    /* Sum: '<S247>/Sum' incorporates:
-     *  DiscreteIntegrator: '<S238>/Integrator'
-     *  Gain: '<S243>/Proportional Gain'
-     */
-    rtDW.Gain = 10.0 * rtb_Sum1_m + rtDW.Integrator_DSTATE_i;
-
-    /* Update for DiscreteIntegrator: '<S238>/Integrator' incorporates:
-     *  Gain: '<S235>/Integral Gain'
-     */
-    rtDW.Integrator_DSTATE_i += 0.0005 * rtb_Sum1_m;
-
-    /* End of Outputs for SubSystem: '<S1>/Switch Case Action Subsystem1' */
-    break;
-
-   case 3:
-    /* Outputs for IfAction SubSystem: '<S1>/Switch Case Action Subsystem2' incorporates:
-     *  ActionPort: '<S7>/Action Port'
-     */
-    /* Sum: '<S7>/Sum1' incorporates:
-     *  Inport: '<Root>/User_TargetCurrent'
-     *  UnitDelay: '<S1>/Unit Delay2'
-     */
-    rtb_Sum1_m = rtU.User_TargetCurrent - rtDW.UnitDelay2_DSTATE;
-
-    /* Sum: '<S298>/Sum' incorporates:
-     *  DiscreteIntegrator: '<S289>/Integrator'
-     */
-    rtDW.Gain = rtb_Sum1_m + rtDW.Integrator_DSTATE_ou;
-
-    /* DeadZone: '<S282>/DeadZone' incorporates:
-     *  Saturate: '<S296>/Saturation'
-     */
-    if (rtDW.Gain > 160.0) {
-      rtb_DeadZone = rtDW.Gain - 160.0;
-      rtDW.Gain = 160.0;
-
-      /* Switch: '<S280>/Switch1' incorporates:
-       *  Constant: '<S280>/Constant'
+    case 1:
+      /* Outputs for IfAction SubSystem: '<S1>/Switch Case Action Subsystem'
+       * incorporates: ActionPort: '<S5>/Action Port'
        */
-      tmp = 1;
-    } else {
-      if (rtDW.Gain >= 0.0) {
-        rtb_DeadZone = 0.0;
+      /* Sum: '<S5>/Sum1' incorporates:
+       *  Inport: '<Root>/User_TargetVoltage'
+       *  UnitDelay: '<S1>/Unit Delay'
+       */
+      rtb_Sum1_m = rtU.User_TargetVoltage - rtDW.UnitDelay_DSTATE;
+
+      /* Sum: '<S198>/Sum' incorporates:
+       *  DiscreteIntegrator: '<S189>/Integrator'
+       *  Gain: '<S194>/Proportional Gain'
+       */
+      rtDW.Gain = 2.5 * rtb_Sum1_m + rtDW.Integrator_DSTATE_n;
+
+      /* Update for DiscreteIntegrator: '<S189>/Integrator' incorporates:
+       *  Gain: '<S186>/Integral Gain'
+       */
+      rtDW.Integrator_DSTATE_n += 5.0E-5 * rtb_Sum1_m;
+
+      /* End of Outputs for SubSystem: '<S1>/Switch Case Action Subsystem' */
+      break;
+
+    case 2:
+      /* Outputs for IfAction SubSystem: '<S1>/Switch Case Action Subsystem1'
+       * incorporates: ActionPort: '<S6>/Action Port'
+       */
+      /* Sum: '<S6>/Sum1' incorporates:
+       *  Inport: '<Root>/User_TargetCurrent'
+       *  UnitDelay: '<S1>/Unit Delay1'
+       */
+      rtb_Sum1_m = rtU.User_TargetCurrent - rtDW.UnitDelay1_DSTATE;
+
+      /* Sum: '<S247>/Sum' incorporates:
+       *  DiscreteIntegrator: '<S238>/Integrator'
+       *  Gain: '<S243>/Proportional Gain'
+       */
+      rtDW.Gain = 10.0 * rtb_Sum1_m + rtDW.Integrator_DSTATE_i;
+
+      /* Update for DiscreteIntegrator: '<S238>/Integrator' incorporates:
+       *  Gain: '<S235>/Integral Gain'
+       */
+      rtDW.Integrator_DSTATE_i += 0.0005 * rtb_Sum1_m;
+
+      /* End of Outputs for SubSystem: '<S1>/Switch Case Action Subsystem1' */
+      break;
+
+    case 3:
+      /* Outputs for IfAction SubSystem: '<S1>/Switch Case Action Subsystem2'
+       * incorporates: ActionPort: '<S7>/Action Port'
+       */
+      /* Sum: '<S7>/Sum1' incorporates:
+       *  Inport: '<Root>/User_TargetCurrent'
+       *  UnitDelay: '<S1>/Unit Delay2'
+       */
+      rtb_Sum1_m = rtU.User_TargetCurrent - rtDW.UnitDelay2_DSTATE;
+
+      /* Sum: '<S298>/Sum' incorporates:
+       *  DiscreteIntegrator: '<S289>/Integrator'
+       */
+      rtDW.Gain = rtb_Sum1_m + rtDW.Integrator_DSTATE_ou;
+
+      /* DeadZone: '<S282>/DeadZone' incorporates:
+       *  Saturate: '<S296>/Saturation'
+       */
+      if (rtDW.Gain > 160.0) {
+        rtb_DeadZone = rtDW.Gain - 160.0;
+        rtDW.Gain = 160.0;
+
+        /* Switch: '<S280>/Switch1' incorporates:
+         *  Constant: '<S280>/Constant'
+         */
+        tmp = 1;
       } else {
-        rtb_DeadZone = rtDW.Gain;
+        if (rtDW.Gain >= 0.0) {
+          rtb_DeadZone = 0.0;
+        } else {
+          rtb_DeadZone = rtDW.Gain;
+        }
+
+        if (rtDW.Gain < 0.0) {
+          rtDW.Gain = 0.0;
+        }
+
+        /* Switch: '<S280>/Switch1' incorporates:
+         *  Constant: '<S280>/Constant2'
+         */
+        tmp = -1;
       }
 
-      if (rtDW.Gain < 0.0) {
-        rtDW.Gain = 0.0;
-      }
+      /* End of DeadZone: '<S282>/DeadZone' */
 
-      /* Switch: '<S280>/Switch1' incorporates:
-       *  Constant: '<S280>/Constant2'
+      /* Switch: '<S280>/Switch2' incorporates:
+       *  Constant: '<S280>/Clamping_zero'
+       *  Constant: '<S280>/Constant3'
+       *  Constant: '<S280>/Constant4'
+       *  RelationalOperator: '<S280>/fix for DT propagation issue1'
        */
-      tmp = -1;
-    }
+      if (rtb_Sum1_m > 0.0) {
+        tmp_0 = 1;
+      } else {
+        tmp_0 = -1;
+      }
 
-    /* End of DeadZone: '<S282>/DeadZone' */
+      /* Switch: '<S280>/Switch' incorporates:
+       *  Constant: '<S280>/Clamping_zero'
+       *  Constant: '<S280>/Constant1'
+       *  Logic: '<S280>/AND3'
+       *  RelationalOperator: '<S280>/Equal1'
+       *  RelationalOperator: '<S280>/Relational Operator'
+       *  Switch: '<S280>/Switch1'
+       *  Switch: '<S280>/Switch2'
+       */
+      if ((rtb_DeadZone != 0.0) && (tmp == tmp_0)) {
+        rtb_Sum1_m = 0.0;
+      }
 
-    /* Switch: '<S280>/Switch2' incorporates:
-     *  Constant: '<S280>/Clamping_zero'
-     *  Constant: '<S280>/Constant3'
-     *  Constant: '<S280>/Constant4'
-     *  RelationalOperator: '<S280>/fix for DT propagation issue1'
-     */
-    if (rtb_Sum1_m > 0.0) {
-      tmp_0 = 1;
-    } else {
-      tmp_0 = -1;
-    }
+      /* Update for DiscreteIntegrator: '<S289>/Integrator' incorporates:
+       *  Switch: '<S280>/Switch'
+       */
+      rtDW.Integrator_DSTATE_ou += rtb_Sum1_m;
 
-    /* Switch: '<S280>/Switch' incorporates:
-     *  Constant: '<S280>/Clamping_zero'
-     *  Constant: '<S280>/Constant1'
-     *  Logic: '<S280>/AND3'
-     *  RelationalOperator: '<S280>/Equal1'
-     *  RelationalOperator: '<S280>/Relational Operator'
-     *  Switch: '<S280>/Switch1'
-     *  Switch: '<S280>/Switch2'
-     */
-    if ((rtb_DeadZone != 0.0) && (tmp == tmp_0)) {
-      rtb_Sum1_m = 0.0;
-    }
+      /* End of Outputs for SubSystem: '<S1>/Switch Case Action Subsystem2' */
+      break;
 
-    /* Update for DiscreteIntegrator: '<S289>/Integrator' incorporates:
-     *  Switch: '<S280>/Switch'
-     */
-    rtDW.Integrator_DSTATE_ou += rtb_Sum1_m;
+    default:
+      /* Outputs for IfAction SubSystem: '<S1>/Switch Case Action Subsystem3'
+       * incorporates: ActionPort: '<S8>/Action Port'
+       */
+      /* SignalConversion generated from: '<S8>/I_RefTotal' incorporates:
+       *  Constant: '<S8>/Constant'
+       */
+      rtDW.Gain = 0.0;
 
-    /* End of Outputs for SubSystem: '<S1>/Switch Case Action Subsystem2' */
-    break;
-
-   default:
-    /* Outputs for IfAction SubSystem: '<S1>/Switch Case Action Subsystem3' incorporates:
-     *  ActionPort: '<S8>/Action Port'
-     */
-    /* SignalConversion generated from: '<S8>/I_RefTotal' incorporates:
-     *  Constant: '<S8>/Constant'
-     */
-    rtDW.Gain = 0.0;
-
-    /* End of Outputs for SubSystem: '<S1>/Switch Case Action Subsystem3' */
-    break;
+      /* End of Outputs for SubSystem: '<S1>/Switch Case Action Subsystem3' */
+      break;
   }
 
   /* End of SwitchCase: '<S1>/Switch Case' */
@@ -251,7 +251,7 @@ void Controller_step(void)
      *  Gain: '<S95>/Proportional Gain'
      */
     rtb_DeadZone_m = (0.0001 * rtb_Sum1_m + rtDW.Integrator_DSTATE_g) +
-      rtb_FilterCoefficient;
+                     rtb_FilterCoefficient;
 
     /* Saturate: '<S97>/Saturation' */
     if (rtb_DeadZone_m > 1.0) {
@@ -272,14 +272,15 @@ void Controller_step(void)
      *  Gain: '<S134>/Derivative Gain'
      *  Sum: '<S135>/SumD'
      */
-    rtb_FilterCoefficient_e = (0.0003 * rtDW.Gain - rtDW.Filter_DSTATE_m) * 10.0;
+    rtb_FilterCoefficient_e =
+        (0.0003 * rtDW.Gain - rtDW.Filter_DSTATE_m) * 10.0;
 
     /* Sum: '<S149>/Sum' incorporates:
      *  DiscreteIntegrator: '<S140>/Integrator'
      *  Gain: '<S145>/Proportional Gain'
      */
     rtb_DeadZone_e = (0.0001 * rtDW.Gain + rtDW.Integrator_DSTATE_o) +
-      rtb_FilterCoefficient_e;
+                     rtb_FilterCoefficient_e;
 
     /* Saturate: '<S147>/Saturation' */
     if (rtb_DeadZone_e > 1.0) {
@@ -463,10 +464,7 @@ void Controller_step(void)
 }
 
 /* Model initialize function */
-void Controller_initialize(void)
-{
-  /* (no initialization code required) */
-}
+void Controller_initialize(void) { /* (no initialization code required) */ }
 
 /*
  * File trailer for generated code.

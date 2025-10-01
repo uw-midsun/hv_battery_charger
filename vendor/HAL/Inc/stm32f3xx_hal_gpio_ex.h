@@ -62,8 +62,7 @@ extern "C" {
                       mapping */
 #define GPIO_AF0_SWJ \
   ((uint8_t)0x00U) /* SWJ (SWD and JTAG) Alternate Function mapping */
-#define GPIO_AF0_TRACE \
-  ((uint8_t)0x00U) /* TRACE Alternate Function mapping */
+#define GPIO_AF0_TRACE ((uint8_t)0x00U) /* TRACE Alternate Function mapping */
 
 /**
  * @brief   AF 1 selection
@@ -201,8 +200,7 @@ extern "C" {
                       mapping */
 #define GPIO_AF0_SWJ \
   ((uint8_t)0x00U) /* SWJ (SWD and JTAG) Alternate Function mapping */
-#define GPIO_AF0_TRACE \
-  ((uint8_t)0x00U) /* TRACE Alternate Function mapping */
+#define GPIO_AF0_TRACE ((uint8_t)0x00U) /* TRACE Alternate Function mapping */
 
 /**
  * @brief   AF 1 selection
@@ -353,8 +351,7 @@ extern "C" {
                       mapping */
 #define GPIO_AF0_SWJ \
   ((uint8_t)0x00U) /* SWJ (SWD and JTAG) Alternate Function mapping */
-#define GPIO_AF0_TRACE \
-  ((uint8_t)0x00U) /* TRACE Alternate Function mapping */
+#define GPIO_AF0_TRACE ((uint8_t)0x00U) /* TRACE Alternate Function mapping */
 
 /**
  * @brief   AF 1 selection
@@ -518,8 +515,7 @@ extern "C" {
                       mapping */
 #define GPIO_AF0_SWJ \
   ((uint8_t)0x00U) /* SWJ (SWD and JTAG) Alternate Function mapping */
-#define GPIO_AF0_TRACE \
-  ((uint8_t)0x00U) /* TRACE Alternate Function mapping */
+#define GPIO_AF0_TRACE ((uint8_t)0x00U) /* TRACE Alternate Function mapping */
 
 /**
  * @brief   AF 1 selection
@@ -667,8 +663,7 @@ extern "C" {
                       mapping */
 #define GPIO_AF0_SWJ \
   ((uint8_t)0x00U) /* SWJ (SWD and JTAG) Alternate Function mapping */
-#define GPIO_AF0_TRACE \
-  ((uint8_t)0x00U) /* TRACE Alternate Function mapping */
+#define GPIO_AF0_TRACE ((uint8_t)0x00U) /* TRACE Alternate Function mapping */
 
 /**
  * @brief   AF 1 selection
@@ -825,8 +820,7 @@ extern "C" {
                       mapping */
 #define GPIO_AF0_SWJ \
   ((uint8_t)0x00U) /* SWJ (SWD and JTAG) Alternate Function mapping */
-#define GPIO_AF0_TRACE \
-  ((uint8_t)0x00U) /* TRACE Alternate Function mapping */
+#define GPIO_AF0_TRACE ((uint8_t)0x00U) /* TRACE Alternate Function mapping */
 
 /**
  * @brief   AF 1 selection
@@ -970,8 +964,7 @@ extern "C" {
                       mapping */
 #define GPIO_AF0_SWJ \
   ((uint8_t)0x00U) /* SWJ (SWD and JTAG) Alternate Function mapping */
-#define GPIO_AF0_TRACE \
-  ((uint8_t)0x00U) /* TRACE Alternate Function mapping */
+#define GPIO_AF0_TRACE ((uint8_t)0x00U) /* TRACE Alternate Function mapping */
 
 /**
  * @brief   AF 1 selection
@@ -1057,8 +1050,9 @@ extern "C" {
 /**
  * @brief   AF 11 selection
  */
-#define GPIO_AF11_TIM19 ((uint8_t)0x0BU) /* TIM19 Alternate Function mapping \
-                                          */
+#define GPIO_AF11_TIM19                                \
+  ((uint8_t)0x0BU) /* TIM19 Alternate Function mapping \
+                    */
 
 /**
  * @brief   AF 14 selection
@@ -1092,8 +1086,7 @@ extern "C" {
                       mapping */
 #define GPIO_AF0_SWJ \
   ((uint8_t)0x00U) /* SWJ (SWD and JTAG) Alternate Function mapping */
-#define GPIO_AF0_TRACE \
-  ((uint8_t)0x00U) /* TRACE Alternate Function mapping */
+#define GPIO_AF0_TRACE ((uint8_t)0x00U) /* TRACE Alternate Function mapping */
 
 /**
  * @brief   AF 1 selection
@@ -1183,8 +1176,9 @@ extern "C" {
 /**
  * @brief   AF 11 selection
  */
-#define GPIO_AF11_TIM19 ((uint8_t)0x0BU) /* TIM19 Alternate Function mapping \
-                                          */
+#define GPIO_AF11_TIM19                                \
+  ((uint8_t)0x0BU) /* TIM19 Alternate Function mapping \
+                    */
 
 /**
  * @brief   AF 15 selection
@@ -1209,8 +1203,7 @@ extern "C" {
                       mapping */
 #define GPIO_AF0_SWJ \
   ((uint8_t)0x00U) /* SWJ (SWD and JTAG) Alternate Function mapping */
-#define GPIO_AF0_TRACE \
-  ((uint8_t)0x00U) /* TRACE Alternate Function mapping */
+#define GPIO_AF0_TRACE ((uint8_t)0x00U) /* TRACE Alternate Function mapping */
 
 /**
  * @brief   AF 1 selection
@@ -1325,8 +1318,7 @@ extern "C" {
                       mapping */
 #define GPIO_AF0_SWJ \
   ((uint8_t)0x00U) /* SWJ (SWD and JTAG) Alternate Function mapping */
-#define GPIO_AF0_TRACE \
-  ((uint8_t)0x00U) /* TRACE Alternate Function mapping */
+#define GPIO_AF0_TRACE ((uint8_t)0x00U) /* TRACE Alternate Function mapping */
 
 /**
  * @brief   AF 1 selection
@@ -1450,8 +1442,7 @@ extern "C" {
                       mapping */
 #define GPIO_AF0_SWJ \
   ((uint8_t)0x00U) /* SWJ (SWD and JTAG) Alternate Function mapping */
-#define GPIO_AF0_TRACE \
-  ((uint8_t)0x00U) /* TRACE Alternate Function mapping */
+#define GPIO_AF0_TRACE ((uint8_t)0x00U) /* TRACE Alternate Function mapping */
 
 /**
  * @brief   AF 1 selection
@@ -1576,8 +1567,7 @@ extern "C" {
                       mapping */
 #define GPIO_AF0_SWJ \
   ((uint8_t)0x00U) /* SWJ (SWD and JTAG) Alternate Function mapping */
-#define GPIO_AF0_TRACE \
-  ((uint8_t)0x00U) /* TRACE Alternate Function mapping */
+#define GPIO_AF0_TRACE ((uint8_t)0x00U) /* TRACE Alternate Function mapping */
 
 /**
  * @brief   AF 1 selection

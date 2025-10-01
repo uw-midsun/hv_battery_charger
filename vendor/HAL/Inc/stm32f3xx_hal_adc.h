@@ -71,7 +71,7 @@ extern "C" {
 /* States of ADC group regular */
 #define HAL_ADC_STATE_REG_BUSY                                             \
   (0x00000100U) /*!< A conversion on group regular is ongoing or can occur \
-                   (either by continuous mode, external trigger, low power                                               \
+                   (either by continuous mode, external trigger, low power \
                    auto power-on, multimode ADC master control) */
 #define HAL_ADC_STATE_REG_EOC \
   (0x00000200U) /*!< Conversion data available on group regular */
@@ -80,9 +80,9 @@ extern "C" {
   (0x00000800U) /*!< End Of Sampling flag raised  */
 
 /* States of ADC group injected */
-#define HAL_ADC_STATE_INJ_BUSY                                              \
-  (0x00001000U) /*!< A conversion on group injected is ongoing or can occur \
-                   (either by auto-injection mode, external trigger, low power                                                \
+#define HAL_ADC_STATE_INJ_BUSY                                                 \
+  (0x00001000U) /*!< A conversion on group injected is ongoing or can occur    \
+                   (either by auto-injection mode, external trigger, low power \
                    auto power-on, multimode ADC master control) */
 #define HAL_ADC_STATE_INJ_EOC \
   (0x00002000U) /*!< Conversion data available on group injected */
@@ -141,9 +141,9 @@ typedef struct __ADC_HandleTypeDef {
   void (*ErrorCallback)(
       struct __ADC_HandleTypeDef* hadc); /*!< ADC error callback */
   void (*InjectedConvCpltCallback)(struct __ADC_HandleTypeDef* hadc);
-      /*!< ADC group injected conversion complete callback */ /*!< ADC end of
-                                                                 sampling
-                                                                 callback */
+  /*!< ADC group injected conversion complete callback */ /*!< ADC end of
+                                                             sampling
+                                                             callback */
   void (*MspInitCallback)(
       struct __ADC_HandleTypeDef* hadc); /*!< ADC Msp Init callback */
   void (*MspDeInitCallback)(

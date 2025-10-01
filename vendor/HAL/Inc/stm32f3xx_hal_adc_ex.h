@@ -611,15 +611,16 @@ typedef struct {
       DMAAccessMode;         /*!< Configures the DMA mode for multi ADC mode:
                                   selection whether 2 DMA channels (each ADC use its own
                                 DMA channel) or 1 DMA channel (one DMA channel for both
-                                ADC, DMA of ADC master)         This parameter can be a value of
+                                ADC, DMA of ADC master)         This parameter can be a
+                                value of
                                 @ref ADCEx_Direct_memory_access_mode_for_multimode
                                   Caution: Limitations with multimode DMA access enabled
                                 (1 DMA channel used): In case of dual mode in high speed
                                 (more than 5Msps) or high activity of DMA by other
                                 peripherals, there is a risk of DMA overrun.         Therefore,
                                 it is recommended to disable multimode DMA access: each
-                                ADC uses its own DMA channel.         Refer to device errata
-                                sheet for more details. */
+                                ADC uses its own DMA channel.         Refer to device
+                                errata         sheet for more details. */
   uint32_t TwoSamplingDelay; /*!< Configures the Delay between 2 sampling
                                 phases. This parameter can be a value of @ref
                                 ADCEx_delay_between_2_sampling_phases Delay
@@ -1007,9 +1008,10 @@ typedef struct {
 #define ADC_RESOLUTION_10B \
   ((uint32_t)ADC_CFGR_RES_0) /*!<  ADC 10-bit resolution */
 #define ADC_RESOLUTION_8B \
-  ((uint32_t)ADC_CFGR_RES_1)                       /*!<  ADC 8-bit resolution */
-#define ADC_RESOLUTION_6B ((uint32_t)ADC_CFGR_RES) /*!<  ADC 6-bit resolution \
-                                                    */
+  ((uint32_t)ADC_CFGR_RES_1) /*!<  ADC 8-bit resolution */
+#define ADC_RESOLUTION_6B                             \
+  ((uint32_t)ADC_CFGR_RES) /*!<  ADC 6-bit resolution \
+                            */
 /**
  * @}
  */
@@ -1831,9 +1833,10 @@ typedef struct {
 /** @defgroup ADCEx_interrupts_definition ADC Extended Interrupts Definition
  * @{
  */
-#define ADC_IT_RDY ADC_IER_RDY     /*!< ADC Ready (ADRDY) interrupt source */
-#define ADC_IT_EOSMP ADC_IER_EOSMP /*!< ADC End of Sampling interrupt source \
-                                    */
+#define ADC_IT_RDY ADC_IER_RDY /*!< ADC Ready (ADRDY) interrupt source */
+#define ADC_IT_EOSMP                                      \
+  ADC_IER_EOSMP /*!< ADC End of Sampling interrupt source \
+                 */
 #define ADC_IT_EOC \
   ADC_IER_EOC /*!< ADC End of Regular Conversion interrupt source */
 #define ADC_IT_EOS                                                             \
@@ -2107,8 +2110,9 @@ typedef struct {
 /** @defgroup ADCEx_Event_type ADC Extended Event Type
  * @{
  */
-#define ADC_AWD_EVENT ((uint32_t)ADC_FLAG_AWD) /*!< ADC Analog watchdog event \
-                                                */
+#define ADC_AWD_EVENT                                     \
+  ((uint32_t)ADC_FLAG_AWD) /*!< ADC Analog watchdog event \
+                            */
 /**
  * @}
  */

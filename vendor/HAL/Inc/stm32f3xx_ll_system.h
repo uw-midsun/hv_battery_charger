@@ -782,8 +782,9 @@ extern "C" {
  */
 #define LL_FLASH_LATENCY_0 0x00000000U         /*!< FLASH Zero Latency cycle */
 #define LL_FLASH_LATENCY_1 FLASH_ACR_LATENCY_0 /*!< FLASH One Latency cycle */
-#define LL_FLASH_LATENCY_2 FLASH_ACR_LATENCY_1 /*!< FLASH Two Latency cycles \
-                                                */
+#define LL_FLASH_LATENCY_2                          \
+  FLASH_ACR_LATENCY_1 /*!< FLASH Two Latency cycles \
+                       */
 /**
  * @}
  */

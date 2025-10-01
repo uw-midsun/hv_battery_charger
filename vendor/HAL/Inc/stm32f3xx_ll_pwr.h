@@ -64,9 +64,10 @@ extern "C" {
 #define LL_PWR_CSR_WUF PWR_CSR_WUF /*!< Wakeup flag */
 #define LL_PWR_CSR_SBF PWR_CSR_SBF /*!< Standby flag */
 #if defined(PWR_PVD_SUPPORT)
-#define LL_PWR_CSR_PVDO PWR_CSR_PVDO /*!< Power voltage detector output flag \
-                                      */
-#endif                               /* PWR_PVD_SUPPORT */
+#define LL_PWR_CSR_PVDO                                \
+  PWR_CSR_PVDO /*!< Power voltage detector output flag \
+                */
+#endif         /* PWR_PVD_SUPPORT */
 #if defined(PWR_CSR_VREFINTRDYF)
 #define LL_PWR_CSR_VREFINTRDYF PWR_CSR_VREFINTRDYF /*!< VREFINT ready flag */
 #endif                                             /* PWR_CSR_VREFINTRDYF */

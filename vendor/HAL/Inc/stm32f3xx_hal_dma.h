@@ -179,9 +179,10 @@ typedef struct __DMA_HandleTypeDef {
  * @{
  */
 #define DMA_PINC_ENABLE \
-  ((uint32_t)DMA_CCR_PINC)             /*!< Peripheral increment mode Enable */
-#define DMA_PINC_DISABLE (0x00000000U) /*!< Peripheral increment mode Disable \
-                                        */
+  ((uint32_t)DMA_CCR_PINC) /*!< Peripheral increment mode Enable */
+#define DMA_PINC_DISABLE                               \
+  (0x00000000U) /*!< Peripheral increment mode Disable \
+                 */
 /**
  * @}
  */

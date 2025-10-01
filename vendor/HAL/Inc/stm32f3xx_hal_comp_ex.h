@@ -67,11 +67,11 @@ extern "C" {
   (COMP_CSR_COMPxINSEL_2 |                                                \
    COMP_CSR_COMPxINSEL_0) /*!< DAC1_CH2_OUT (PA5) connected to comparator \
                              inverting input */
-#define COMP_INVERTINGINPUT_IO1                                            \
-  (COMP_CSR_COMPxINSEL_2 |                                                 \
-   COMP_CSR_COMPxINSEL_1) /*!< IO1 (PA0 for COMP1, PA2 for COMP2, PD15 for \
-                             COMP3, PE8 for COMP4, PD13 for COMP5, PD10 for                                   \
-                             COMP6, PC0 for COMP7) connected to comparator                                    \
+#define COMP_INVERTINGINPUT_IO1                                             \
+  (COMP_CSR_COMPxINSEL_2 |                                                  \
+   COMP_CSR_COMPxINSEL_1) /*!< IO1 (PA0 for COMP1, PA2 for COMP2, PD15 for  \
+                             COMP3, PE8 for COMP4, PD13 for COMP5, PD10 for \
+                             COMP6, PC0 for COMP7) connected to comparator  \
                              inverting input */
 #define COMP_INVERTINGINPUT_IO2                                                \
   COMP_CSR_COMPxINSEL /*!< IO2 (PB12 for COMP3, PB2 for COMP4, PB10 for COMP5, \
@@ -214,7 +214,7 @@ extern "C" {
                    inverting input */
 #define COMP_NONINVERTINGINPUT_IO2                                             \
   COMP_CSR_COMPxNONINSEL /*!< IO2 (PA3 for COMP2, PD14 for COMP3, PE7 for      \
-                            COMP4, PB13 for COMP5, PB11 for COMP6, PC1 for                                                       \
+                            COMP4, PB13 for COMP5, PB11 for COMP6, PC1 for     \
                             COMP7) connected to comparator non inverting input \
                           */
 #define COMP_NONINVERTINGINPUT_DAC1SWITCHCLOSED                        \
@@ -709,9 +709,9 @@ extern "C" {
  * @{
  */
 #define COMP_WINDOWMODE_DISABLE (0x00000000U) /*!< Window mode disabled */
-#define COMP_WINDOWMODE_ENABLE                                          \
-  COMP_CSR_COMPxWNDWEN /*!< Window mode enabled: non inverting input of \
-                          comparator X (x=2U,4,6U) is connected to the non                                                \
+#define COMP_WINDOWMODE_ENABLE                                             \
+  COMP_CSR_COMPxWNDWEN /*!< Window mode enabled: non inverting input of    \
+                          comparator X (x=2U,4,6U) is connected to the non \
                           inverting input of comparator X-1U */
 /**
  * @}
@@ -722,10 +722,10 @@ extern "C" {
  * @{
  */
 #define COMP_WINDOWMODE_DISABLE (0x00000000U) /*!< Window mode disabled */
-#define COMP_WINDOWMODE_ENABLE                                                \
-  ((uint32_t)                                                                 \
-       COMP_CSR_COMPxWNDWEN) /*!< Window mode enabled: non inverting input of \
-                                comparator 2 is connected to the non inverting                                            \
+#define COMP_WINDOWMODE_ENABLE                                                 \
+  ((uint32_t)                                                                  \
+       COMP_CSR_COMPxWNDWEN) /*!< Window mode enabled: non inverting input of  \
+                                comparator 2 is connected to the non inverting \
                                 input of comparator 1 (PA1) */
 /**
  * @}
@@ -752,8 +752,9 @@ extern "C" {
 #define COMP_MODE_HIGHSPEED (0x00000000U)          /*!< High Speed */
 #define COMP_MODE_MEDIUMSPEED COMP_CSR_COMPxMODE_0 /*!< Medium Speed */
 #define COMP_MODE_LOWPOWER COMP_CSR_COMPxMODE_1    /*!< Low power mode */
-#define COMP_MODE_ULTRALOWPOWER COMP_CSR_COMPxMODE /*!< Ultra-low power mode \
-                                                    */
+#define COMP_MODE_ULTRALOWPOWER                \
+  COMP_CSR_COMPxMODE /*!< Ultra-low power mode \
+                      */
 
 #endif /* STM32F302xC || STM32F303xC || STM32F358xx || */
        /* STM32F373xC || STM32F378xx */

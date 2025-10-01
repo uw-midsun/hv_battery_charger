@@ -209,10 +209,11 @@ typedef struct {
 #define LL_USART_ISR_ORE USART_ISR_ORE   /*!< Overrun error flag */
 #define LL_USART_ISR_IDLE USART_ISR_IDLE /*!< Idle line detected flag */
 #define LL_USART_ISR_RXNE \
-  USART_ISR_RXNE                       /*!< Read data register not empty flag */
-#define LL_USART_ISR_TC USART_ISR_TC   /*!< Transmission complete flag */
-#define LL_USART_ISR_TXE USART_ISR_TXE /*!< Transmit data register empty flag \
-                                        */
+  USART_ISR_RXNE                     /*!< Read data register not empty flag */
+#define LL_USART_ISR_TC USART_ISR_TC /*!< Transmission complete flag */
+#define LL_USART_ISR_TXE                               \
+  USART_ISR_TXE /*!< Transmit data register empty flag \
+                 */
 #define LL_USART_ISR_LBDF USART_ISR_LBDF   /*!< LIN break detection flag */
 #define LL_USART_ISR_CTSIF USART_ISR_CTSIF /*!< CTS interrupt flag */
 #define LL_USART_ISR_CTS USART_ISR_CTS     /*!< CTS flag */
@@ -251,8 +252,9 @@ typedef struct {
   USART_CR1_CMIE /*!< Character match interrupt enable */
 #define LL_USART_CR1_RTOIE \
   USART_CR1_RTOIE /*!< Receiver timeout interrupt enable */
-#define LL_USART_CR1_EOBIE USART_CR1_EOBIE /*!< End of Block interrupt enable \
-                                            */
+#define LL_USART_CR1_EOBIE                           \
+  USART_CR1_EOBIE /*!< End of Block interrupt enable \
+                   */
 #define LL_USART_CR2_LBDIE \
   USART_CR2_LBDIE /*!< LIN break detection interrupt enable */
 #define LL_USART_CR3_EIE USART_CR3_EIE     /*!< Error interrupt enable */
