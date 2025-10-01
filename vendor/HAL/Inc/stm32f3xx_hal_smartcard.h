@@ -160,13 +160,14 @@ typedef struct {
                           This parameter can be a value of @ref
                         SMARTCARD_MSB_First */
 
-  uint16_t TxCompletionIndication; /*!< Specifies which transmission completion
-                                      indication is used: before (when relevant
-                                      flag is available) or once guard time
-                                      period has elapsed. This parameter can be
-                                      a value of @ref
-                                      SMARTCARDEx_Transmission_Completion_Indication.
-                                    */
+  uint16_t
+      TxCompletionIndication; /*!< Specifies which transmission completion
+                                 indication is used: before (when relevant
+                                 flag is available) or once guard time
+                                 period has elapsed. This parameter can be
+                                 a value of @ref
+                                 SMARTCARDEx_Transmission_Completion_Indication.
+                               */
 } SMARTCARD_AdvFeatureInitTypeDef;
 
 /**
@@ -411,8 +412,9 @@ typedef enum {
 /** @defgroup SMARTCARD_Parity SMARTCARD Parity
  * @{
  */
-#define SMARTCARD_PARITY_EVEN USART_CR1_PCE /*!< SMARTCARD frame even parity \
-                                             */
+#define SMARTCARD_PARITY_EVEN                    \
+  USART_CR1_PCE /*!< SMARTCARD frame even parity \
+                 */
 #define SMARTCARD_PARITY_ODD \
   (USART_CR1_PCE | USART_CR1_PS) /*!< SMARTCARD frame odd parity  */
 /**
@@ -433,8 +435,9 @@ typedef enum {
 /** @defgroup SMARTCARD_Clock_Polarity SMARTCARD Clock Polarity
  * @{
  */
-#define SMARTCARD_POLARITY_LOW 0x00000000U /*!< SMARTCARD frame low polarity \
-                                            */
+#define SMARTCARD_POLARITY_LOW                  \
+  0x00000000U /*!< SMARTCARD frame low polarity \
+               */
 #define SMARTCARD_POLARITY_HIGH \
   USART_CR2_CPOL /*!< SMARTCARD frame high polarity */
 /**

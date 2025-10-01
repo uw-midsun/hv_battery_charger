@@ -146,12 +146,12 @@ extern "C" {
 #define DAC_TRIGGER_T3_TRGO                                                          \
   ((uint32_t)(DAC_CR_TSEL1_0 |                                                       \
               DAC_CR_TEN1)) /*!< TIM3 TRGO selected as external conversion           \
-                               trigger for DAC channel Use                                                                                 \
+                               trigger for DAC channel Use                           \
                                __HAL_REMAPTRIGGER_ENABLE(HAL_REMAPTRIGGER_DAC1_TRIG) \
                                for TIM3 selection */
 #define DAC_TRIGGER_T8_TRGO                                                     \
   DAC_TRIGGER_T3_TRGO /*!< TIM8 TRGO selected as external conversion trigger    \
-                         for DAC channel Use                                                                            \
+                         for DAC channel Use                                    \
                          __HAL_REMAPTRIGGER_DISABLE(HAL_REMAPTRIGGER_DAC1_TRIG) \
                          for TIM8 selection */
 
@@ -274,7 +274,7 @@ extern "C" {
 #define DAC_TRIGGER_T3_TRGO                                                          \
   ((uint32_t)(DAC_CR_TSEL1_0 |                                                       \
               DAC_CR_TEN1)) /*!< TIM3 TRGO selected as external conversion           \
-                               trigger for DAC channel Use                                                                                 \
+                               trigger for DAC channel Use                           \
                                __HAL_REMAPTRIGGER_ENABLE(HAL_REMAPTRIGGER_DAC1_TRIG) \
                                for TIM3 remap */
 
@@ -289,19 +289,19 @@ extern "C" {
 #define DAC_TRIGGER_T15_TRGO                                                           \
   ((uint32_t)(DAC_CR_TSEL1_1 | DAC_CR_TSEL1_0 |                                        \
               DAC_CR_TEN1)) /*!< TIM15 TRGO selected as external conversion            \
-                               trigger for DAC channel Use                                                                                   \
+                               trigger for DAC channel Use                             \
                                __HAL_REMAPTRIGGER_DISABLE(HAL_REMAPTRIGGER_DAC1_TRIG3) \
                                for TIM15 selection */
 #define DAC_TRIGGER_HRTIM1_DACTRG1                                               \
   DAC_TRIGGER_T15_TRGO /*!< HRTIM1 DACTRG1 selected as external conversion       \
-                          trigger for DAC Use                                                                             \
+                          trigger for DAC Use                                    \
                           __HAL_REMAPTRIGGER_ENABLE(HAL_REMAPTRIGGER_DAC1_TRIG3) \
                           for HRTIM1 DACTRG1 selection */
 
 #define DAC_TRIGGER_HRTIM1_DACTRG2                                                    \
   ((uint32_t)(DAC_CR_TSEL1_2 | DAC_CR_TSEL1_0 |                                       \
               DAC_CR_TEN1)) /*!< HRTIM1 DACTRG2 selected as external                  \
-                               conversion trigger for DAC channel (DAC1) Use                                                                                  \
+                               conversion trigger for DAC channel (DAC1) Use          \
                                __HAL_REMAPTRIGGER_ENABLE(HAL_REMAPTRIGGER_DAC1_TRIG5) \
                                for HRTIM1 DACTRG2 remap */
 #define DAC_TRIGGER_HRTIM1_DACTRG3                                    \

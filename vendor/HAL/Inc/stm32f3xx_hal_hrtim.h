@@ -120,9 +120,9 @@ typedef struct {
       CaptureTrigger2;        /*!< Event(s) triggering capture unit 2.
                                    When the timer operates in Simple mode, this
                                  parameter can be a value of @ref
-                                 HRTIM_External_Event_Channels.        When the timer operates
-                                 in Waveform mode, this parameter can be a combination
-                                 of @ref HRTIM_Capture_Unit_Trigger. */
+                                 HRTIM_External_Event_Channels.        When the timer
+                                 operates        in Waveform mode, this parameter can be a
+                                 combination        of @ref HRTIM_Capture_Unit_Trigger. */
   uint32_t InterruptRequests; /*!< Interrupts requests enabled for the timer. */
   uint32_t DMARequests;       /*!< DMA requests enabled for the timer. */
   uint32_t
@@ -345,8 +345,8 @@ typedef struct {
                                inactive when in IDLE state. This parameter can
                                be any value of @ref HRTIM_Output_IDLE_Level */
   uint32_t Event;         /*!< Specifies the external event triggering the pulse
-                             generation.         This parameter can be any 'EEVx' value of @ref
-                             HRTIM_External_Event_Channels */
+                             generation.         This parameter can be any 'EEVx' value
+                             of @ref         HRTIM_External_Event_Channels */
   uint32_t EventPolarity; /*!< Specifies the polarity of the external event (in
                              case of level sensitivity). This parameter can be a
                              value of @ref HRTIM_External_Event_Polarity */
@@ -370,10 +370,10 @@ typedef struct {
                              combination of  @ref HRTIM_Master_Interrupt_Enable
                               or @ref HRTIM_Timing_Unit_Interrupt_Enable */
   uint32_t DMARequests;   /*!< Relevant for all HRTIM timers, including the
-                             master.   Specifies which DMA requests must be enabled
-                             for the timer.   This parameter can be any combination
-                             of  @ref HRTIM_Master_DMA_Request_Enable   or @ref
-                             HRTIM_Timing_Unit_DMA_Request_Enable */
+                             master.   Specifies which DMA requests must be
+                             enabled   for the timer.   This parameter can be any
+                             combination   of  @ref HRTIM_Master_DMA_Request_Enable
+                             or @ref   HRTIM_Timing_Unit_DMA_Request_Enable */
   uint32_t DMASrcAddress; /*!< Relevant for all HRTIM timers, including the
                              master. Specifies the address of the source address
                              of the DMA transfer */
@@ -387,13 +387,13 @@ typedef struct {
                               enabled This parameter can be any value of @ref
                               HRTIM_Half_Mode_Enable  */
   uint32_t StartOnSync;    /*!< Relevant for all HRTIM timers, including the
-                              master.    Specifies whether or not timer is reset by a
-                              rising edge on the synchronization input (when
+                              master.    Specifies whether or not timer is reset by
+                              a    rising edge on the synchronization input (when
                               enabled).    This parameter can be any value of @ref
                               HRTIM_Start_On_Sync_Input_Event  */
   uint32_t ResetOnSync;    /*!< Relevant for all HRTIM timers, including the
-                              master.    Specifies whether or not timer is reset by a
-                              rising edge on the synchronization input (when
+                              master.    Specifies whether or not timer is reset by
+                              a    rising edge on the synchronization input (when
                               enabled).    This parameter can be any value of @ref
                               HRTIM_Reset_On_Sync_Input_Event  */
   uint32_t DACSynchro; /*!< Relevant for all HRTIM timers, including the master.
@@ -405,10 +405,10 @@ typedef struct {
                              is enabled. This parameter can be any value of @ref
                              HRTIM_Register_Preload_Enable  */
   uint32_t UpdateGating;  /*!< Relevant for all HRTIM timers, including the
-                             master.  Specifies how the update occurs with respect
-                             to a burst DMA transaction or  update enable inputs
-                             (Slave timers only).  This parameter can be any value
-                             of @ref HRTIM_Update_Gating   */
+                             master.  Specifies how the update occurs with
+                             respect  to a burst DMA transaction or  update enable
+                             inputs  (Slave timers only).  This parameter can be
+                             any value  of @ref HRTIM_Update_Gating   */
   uint32_t BurstMode; /*!< Relevant for all HRTIM timers, including the master.
                            Specifies how the timer behaves during a burst mode
                          operation. This parameter can be any value of @ref
@@ -428,13 +428,13 @@ typedef struct {
                            HRTIM_Timer_Fault_Enabling  */
   uint32_t FaultLock;   /*!< Relevant for Timer A to Timer E.
                              Specifies whether or not fault enabling status is
-                           write protected.   This parameter can be a value of @ref
-                           HRTIM_Timer_Fault_Lock */
+                           write protected.   This parameter can be a value of
+                           @ref   HRTIM_Timer_Fault_Lock */
   uint32_t
       DeadTimeInsertion;          /*!< Relevant for Timer A to Timer E.
                                        Specifies whether or not dead-time insertion is
-                                     enabled for the timer.          This parameter can be a value
-                                     of @ref HRTIM_Timer_Deadtime_Insertion */
+                                     enabled for the timer.          This parameter can
+                                     be a value          of @ref HRTIM_Timer_Deadtime_Insertion */
   uint32_t DelayedProtectionMode; /*!< Relevant for Timer A to Timer E.
                                        Specifies the delayed protection mode.
                                        This parameter can be a value of @ref
@@ -445,8 +445,8 @@ typedef struct {
                                      combination of @ref HRTIM_Timer_Update_Trigger */
   uint32_t ResetTrigger;          /*!< Relevant for Timer A to Timer E.
                                        Specifies source(s) triggering the timer counter
-                                     reset.          This parameter can be a combination of @ref
-                                     HRTIM_Timer_Reset_Trigger */
+                                     reset.          This parameter can be a combination
+                                     of @ref          HRTIM_Timer_Reset_Trigger */
   uint32_t
       ResetUpdate; /*!<  Relevant for Timer A to Timer E.
                          Specifies whether or not registers update is triggered
@@ -495,7 +495,8 @@ typedef struct {
       ResetSource; /*!< Specifies the event(s) transitioning the output from its
                       active level to its inactive level. This parameter can be
                       a combination of @ref HRTIM_Output_Reset_Source */
-  uint32_t IdleMode;   /*!< Specifies whether or not the output is affected by a
+  uint32_t
+      IdleMode;        /*!< Specifies whether or not the output is affected by a
                           burst mode operation.   This parameter can be any value of
                           @ref HRTIM_Output_Idle_Mode */
   uint32_t IdleLevel;  /*!< Specifies whether the output level is active or
@@ -827,24 +828,33 @@ typedef void (*pHRTIM_TIMxCallbackTypeDef)(
  * @brief Constants defining external event channel identifiers
  */
 #define HRTIM_EVENT_NONE (0x00000000U) /*!< Undefined event channel */
-#define HRTIM_EVENT_1 (0x00000001U) /*!< External event channel 1  identifier \
-                                     */
-#define HRTIM_EVENT_2 (0x00000002U) /*!< External event channel 2  identifier \
-                                     */
-#define HRTIM_EVENT_3 (0x00000003U) /*!< External event channel 3  identifier \
-                                     */
-#define HRTIM_EVENT_4 (0x00000004U) /*!< External event channel 4  identifier \
-                                     */
-#define HRTIM_EVENT_5 (0x00000005U) /*!< External event channel 5  identifier \
-                                     */
-#define HRTIM_EVENT_6 (0x00000006U) /*!< External event channel 6  identifier \
-                                     */
-#define HRTIM_EVENT_7 (0x00000007U) /*!< External event channel 7  identifier \
-                                     */
-#define HRTIM_EVENT_8 (0x00000008U) /*!< External event channel 8  identifier \
-                                     */
-#define HRTIM_EVENT_9 (0x00000009U) /*!< External event channel 9  identifier \
-                                     */
+#define HRTIM_EVENT_1                                     \
+  (0x00000001U) /*!< External event channel 1  identifier \
+                 */
+#define HRTIM_EVENT_2                                     \
+  (0x00000002U) /*!< External event channel 2  identifier \
+                 */
+#define HRTIM_EVENT_3                                     \
+  (0x00000003U) /*!< External event channel 3  identifier \
+                 */
+#define HRTIM_EVENT_4                                     \
+  (0x00000004U) /*!< External event channel 4  identifier \
+                 */
+#define HRTIM_EVENT_5                                     \
+  (0x00000005U) /*!< External event channel 5  identifier \
+                 */
+#define HRTIM_EVENT_6                                     \
+  (0x00000006U) /*!< External event channel 6  identifier \
+                 */
+#define HRTIM_EVENT_7                                     \
+  (0x00000007U) /*!< External event channel 7  identifier \
+                 */
+#define HRTIM_EVENT_8                                     \
+  (0x00000008U) /*!< External event channel 8  identifier \
+                 */
+#define HRTIM_EVENT_9                                     \
+  (0x00000009U) /*!< External event channel 9  identifier \
+                 */
 #define HRTIM_EVENT_10 \
   (0x0000000AU) /*!< External event channel 10 identifier */
 /**
@@ -1073,17 +1083,22 @@ typedef void (*pHRTIM_TIMxCallbackTypeDef)(
  * @{
  * @brief Constants defining whether a fault channel is enabled for a timer
  */
-#define HRTIM_TIMFAULTENABLE_NONE 0x00000000U           /*!< No fault enabled */
-#define HRTIM_TIMFAULTENABLE_FAULT1 (HRTIM_FLTR_FLT1EN) /*!< Fault 1 enabled \
-                                                         */
-#define HRTIM_TIMFAULTENABLE_FAULT2 (HRTIM_FLTR_FLT2EN) /*!< Fault 2 enabled \
-                                                         */
-#define HRTIM_TIMFAULTENABLE_FAULT3 (HRTIM_FLTR_FLT3EN) /*!< Fault 3 enabled \
-                                                         */
-#define HRTIM_TIMFAULTENABLE_FAULT4 (HRTIM_FLTR_FLT4EN) /*!< Fault 4 enabled \
-                                                         */
-#define HRTIM_TIMFAULTENABLE_FAULT5 (HRTIM_FLTR_FLT5EN) /*!< Fault 5 enabled \
-                                                         */
+#define HRTIM_TIMFAULTENABLE_NONE 0x00000000U /*!< No fault enabled */
+#define HRTIM_TIMFAULTENABLE_FAULT1        \
+  (HRTIM_FLTR_FLT1EN) /*!< Fault 1 enabled \
+                       */
+#define HRTIM_TIMFAULTENABLE_FAULT2        \
+  (HRTIM_FLTR_FLT2EN) /*!< Fault 2 enabled \
+                       */
+#define HRTIM_TIMFAULTENABLE_FAULT3        \
+  (HRTIM_FLTR_FLT3EN) /*!< Fault 3 enabled \
+                       */
+#define HRTIM_TIMFAULTENABLE_FAULT4        \
+  (HRTIM_FLTR_FLT4EN) /*!< Fault 4 enabled \
+                       */
+#define HRTIM_TIMFAULTENABLE_FAULT5        \
+  (HRTIM_FLTR_FLT5EN) /*!< Fault 5 enabled \
+                       */
 /**
  * @}
  */
@@ -1221,8 +1236,9 @@ typedef void (*pHRTIM_TIMxCallbackTypeDef)(
  * @brief Constants defining the events that can be selected to trigger the
  * reset of the timer counter
  */
-#define HRTIM_TIMRESETTRIGGER_NONE 0x00000000U /*!< No counter reset trigger \
-                                                */
+#define HRTIM_TIMRESETTRIGGER_NONE          \
+  0x00000000U /*!< No counter reset trigger \
+               */
 #define HRTIM_TIMRESETTRIGGER_UPDATE \
   (HRTIM_RSTR_UPDATE) /*!< The timer counter is reset upon update event */
 #define HRTIM_TIMRESETTRIGGER_CMP2                                             \
@@ -1382,9 +1398,10 @@ typedef void (*pHRTIM_TIMxCallbackTypeDef)(
  * @{
  * @brief Constants defining the polarity of a timer output
  */
-#define HRTIM_OUTPUTPOLARITY_HIGH (0x00000000U)    /*!< Output is active HIGH */
-#define HRTIM_OUTPUTPOLARITY_LOW (HRTIM_OUTR_POL1) /*!< Output is active LOW \
-                                                    */
+#define HRTIM_OUTPUTPOLARITY_HIGH (0x00000000U) /*!< Output is active HIGH */
+#define HRTIM_OUTPUTPOLARITY_LOW              \
+  (HRTIM_OUTR_POL1) /*!< Output is active LOW \
+                     */
 /**
  * @}
  */
@@ -1990,8 +2007,9 @@ typedef void (*pHRTIM_TIMxCallbackTypeDef)(
  * @brief Constants defining the duty cycle of the generated high frequency
  * carrier Duty cycle can be adjusted by 1/8 step (from 0/8 up to 7/8)
  */
-#define HRTIM_CHOPPER_DUTYCYCLE_0 (0x000000U) /*!< Only 1st pulse is present \
-                                               */
+#define HRTIM_CHOPPER_DUTYCYCLE_0            \
+  (0x000000U) /*!< Only 1st pulse is present \
+               */
 #define HRTIM_CHOPPER_DUTYCYCLE_125 \
   (HRTIM_CHPR_CARDTY_0) /*!< Duty cycle of the carrier signal is 12.5U % */
 #define HRTIM_CHOPPER_DUTYCYCLE_250 \
@@ -2145,11 +2163,13 @@ typedef void (*pHRTIM_TIMxCallbackTypeDef)(
  * @{
  * @brief Constants defining available sources associated to external events
  */
-#define HRTIM_EVENTSRC_1 (0x00000000U)          /*!< External event source 1U */
-#define HRTIM_EVENTSRC_2 (HRTIM_EECR1_EE1SRC_0) /*!< External event source 2U \
-                                                 */
-#define HRTIM_EVENTSRC_3 (HRTIM_EECR1_EE1SRC_1) /*!< External event source 3U \
-                                                 */
+#define HRTIM_EVENTSRC_1 (0x00000000U) /*!< External event source 1U */
+#define HRTIM_EVENTSRC_2                               \
+  (HRTIM_EECR1_EE1SRC_0) /*!< External event source 2U \
+                          */
+#define HRTIM_EVENTSRC_3                               \
+  (HRTIM_EECR1_EE1SRC_1) /*!< External event source 3U \
+                          */
 #define HRTIM_EVENTSRC_4                                                      \
   (HRTIM_EECR1_EE1SRC_1 | HRTIM_EECR1_EE1SRC_0) /*!< External event source 4U \
                                                  */
@@ -2208,11 +2228,13 @@ typedef void (*pHRTIM_TIMxCallbackTypeDef)(
  * @brief Constants defining the frequency used to sample an external event 6
  *        input and the length (N) of the digital filter applied
  */
-#define HRTIM_EVENTFILTER_NONE (0x00000000U)     /*!< Filter disabled */
-#define HRTIM_EVENTFILTER_1 (HRTIM_EECR3_EE6F_0) /*!< fSAMPLING= fHRTIM, N=2U \
-                                                  */
-#define HRTIM_EVENTFILTER_2 (HRTIM_EECR3_EE6F_1) /*!< fSAMPLING= fHRTIM, N=4U \
-                                                  */
+#define HRTIM_EVENTFILTER_NONE (0x00000000U) /*!< Filter disabled */
+#define HRTIM_EVENTFILTER_1                         \
+  (HRTIM_EECR3_EE6F_0) /*!< fSAMPLING= fHRTIM, N=2U \
+                        */
+#define HRTIM_EVENTFILTER_2                         \
+  (HRTIM_EECR3_EE6F_1) /*!< fSAMPLING= fHRTIM, N=4U \
+                        */
 #define HRTIM_EVENTFILTER_3 \
   (HRTIM_EECR3_EE6F_1 | HRTIM_EECR3_EE6F_0) /*!< fSAMPLING= fHRTIM, N=8U */
 #define HRTIM_EVENTFILTER_4 \
@@ -2283,8 +2305,9 @@ typedef void (*pHRTIM_TIMxCallbackTypeDef)(
  * @{
  * @brief Constants defining the polarity of a fault event
  */
-#define HRTIM_FAULTPOLARITY_LOW (0x00000000U) /*!< Fault input is active low \
-                                               */
+#define HRTIM_FAULTPOLARITY_LOW                \
+  (0x00000000U) /*!< Fault input is active low \
+                 */
 #define HRTIM_FAULTPOLARITY_HIGH \
   (HRTIM_FLTINR1_FLT1P) /*!< Fault input is active high */
 /**
@@ -2833,9 +2856,10 @@ typedef void (*pHRTIM_TIMxCallbackTypeDef)(
  * @brief Constants used to enable or disable a fault channel
  */
 #define HRTIM_FAULTMODECTL_DISABLED \
-  0x00000000U                                  /*!< Fault channel is disabled */
-#define HRTIM_FAULTMODECTL_ENABLED 0x00000001U /*!< Fault channel is  enabled \
-                                                */
+  0x00000000U /*!< Fault channel is disabled */
+#define HRTIM_FAULTMODECTL_ENABLED           \
+  0x00000001U /*!< Fault channel is  enabled \
+               */
 /**
  * @}
  */
@@ -2909,9 +2933,9 @@ typedef void (*pHRTIM_TIMxCallbackTypeDef)(
 #define HRTIM_OUTPUTSTATE_IDLE                                                 \
   (0x00000001U) /*!< Main operating mode, where the output can take the active \
                    or inactive level as programmed in the crossbar unit */
-#define HRTIM_OUTPUTSTATE_RUN                                                 \
-  (0x00000002U) /*!< Default operating state (e.g. after an HRTIM reset, when \
-                   the outputs are disabled by software or during a burst mode                      \
+#define HRTIM_OUTPUTSTATE_RUN                                                  \
+  (0x00000002U) /*!< Default operating state (e.g. after an HRTIM reset, when  \
+                   the outputs are disabled by software or during a burst mode \
                    operation */
 #define HRTIM_OUTPUTSTATE_FAULT                                              \
   (0x00000003U) /*!< Safety state, entered in case of a shut-down request on \
@@ -3087,8 +3111,9 @@ typedef void (*pHRTIM_TIMxCallbackTypeDef)(
   HRTIM_TIMISR_CMP4 /*!< Timer compare 4 interrupt flag */
 #define HRTIM_TIM_FLAG_REP \
   HRTIM_TIMISR_REP /*!< Timer repetition interrupt flag */
-#define HRTIM_TIM_FLAG_UPD HRTIM_TIMISR_UPD /*!< Timer update interrupt flag \
-                                             */
+#define HRTIM_TIM_FLAG_UPD                          \
+  HRTIM_TIMISR_UPD /*!< Timer update interrupt flag \
+                    */
 #define HRTIM_TIM_FLAG_CPT1 \
   HRTIM_TIMISR_CPT1 /*!< Timer capture 1 interrupt flag */
 #define HRTIM_TIM_FLAG_CPT2 \

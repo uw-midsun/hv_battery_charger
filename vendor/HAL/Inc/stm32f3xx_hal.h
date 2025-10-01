@@ -101,9 +101,9 @@ typedef enum {
  * STM32F373xC/STM32F378xx devices)
  * @{
  */
-#define HAL_REMAPDMA_ADC24_DMA2_CH34                                   \
-  (0x00000100U) /*!< ADC24 DMA remap (STM32F303xB/C/E, STM32F358xx and \
-                   STM32F398xx devices) 1: Remap (ADC24 DMA requests mapped on                                \
+#define HAL_REMAPDMA_ADC24_DMA2_CH34                                           \
+  (0x00000100U) /*!< ADC24 DMA remap (STM32F303xB/C/E, STM32F358xx and         \
+                   STM32F398xx devices) 1: Remap (ADC24 DMA requests mapped on \
                    DMA2 channels 3 and 4) */
 #define HAL_REMAPDMA_TIM16_DMA1_CH6                                         \
   (0x00000800U) /*!< TIM16 DMA request remap                                \
@@ -113,13 +113,13 @@ typedef enum {
   (0x00001000U) /*!< TIM17 DMA request remap                                \
                               1: Remap (TIM17_CH1 and TIM17_UP DMA requests \
                    mapped on DMA1 channel 7) */
-#define HAL_REMAPDMA_TIM6_DAC1_CH1_DMA1_CH3                            \
-  (0x00002000U) /*!< TIM6 and DAC channel1 DMA remap (STM32F303xB/C/E, \
-                   STM32F358xx and STM32F398xx devices) 1: Remap (TIM6_UP and                                                 \
+#define HAL_REMAPDMA_TIM6_DAC1_CH1_DMA1_CH3                                   \
+  (0x00002000U) /*!< TIM6 and DAC channel1 DMA remap (STM32F303xB/C/E,        \
+                   STM32F358xx and STM32F398xx devices) 1: Remap (TIM6_UP and \
                    DAC_CH1 DMA requests mapped on DMA1 channel 3) */
-#define HAL_REMAPDMA_TIM7_DAC1_CH2_DMA1_CH4                            \
-  (0x00004000U) /*!< TIM7 and DAC channel2 DMA remap (STM32F303xB/C/E, \
-                   STM32F358xx and STM32F398xx devices) 1: Remap (TIM7_UP and                                                 \
+#define HAL_REMAPDMA_TIM7_DAC1_CH2_DMA1_CH4                                   \
+  (0x00004000U) /*!< TIM7 and DAC channel2 DMA remap (STM32F303xB/C/E,        \
+                   STM32F358xx and STM32F398xx devices) 1: Remap (TIM7_UP and \
                    DAC_CH2 DMA requests mapped on DMA1 channel 4) */
 #define HAL_REMAPDMA_DAC2_CH1_DMA1_CH5                                       \
   (0x00008000U) /*!< DAC2 channel1 DMA remap (STM32F303x4/6/8 devices only)  \
@@ -245,9 +245,9 @@ typedef enum {
  *                 - 01: CFGR3 register in SYSCFG
  * @{
  */
-#define HAL_REMAPTRIGGER_DAC1_TRIG                                           \
-  (0x00000080U) /*!< DAC trigger remap (when TSEL = 001 on STM32F303xB/C and \
-                   STM32F358xx devices) 0: No remap (DAC trigger is TIM8_TRGO)                                      \
+#define HAL_REMAPTRIGGER_DAC1_TRIG                                             \
+  (0x00000080U) /*!< DAC trigger remap (when TSEL = 001 on STM32F303xB/C and   \
+                   STM32F358xx devices) 0: No remap (DAC trigger is TIM8_TRGO) \
                               1: Remap (DAC trigger is TIM3_TRGO) */
 #define HAL_REMAPTRIGGER_TIM1_ITR3           \
   (0x00000040U) /*!< TIM1 ITR3 trigger remap \
@@ -297,23 +297,23 @@ typedef enum {
                                    1: Remap (TIM20_CC1) */
 #define HAL_REMAPADCTRIGGER_ADC12_EXT13                                    \
   SYSCFG_CFGR4_ADC12_EXT13_RMP /*!< Input trigger of ADC12 regular channel \
-                                  EXT13 0: No remap (TIM6_TRGO) 1: Remap                                                                  \
+                                  EXT13 0: No remap (TIM6_TRGO) 1: Remap   \
                                   (TIM20_CC2) */
 #define HAL_REMAPADCTRIGGER_ADC12_EXT15                                    \
   SYSCFG_CFGR4_ADC12_EXT15_RMP /*!< Input trigger of ADC12 regular channel \
-                                  EXT15 0: No remap (TIM3_CC4) 1: Remap                                                                  \
+                                  EXT15 0: No remap (TIM3_CC4) 1: Remap    \
                                   (TIM20_CC3) */
 #define HAL_REMAPADCTRIGGER_ADC12_JEXT3                                     \
   SYSCFG_CFGR4_ADC12_JEXT3_RMP /*!< Input trigger of ADC12 injected channel \
-                                  JEXT3 0: No remap (TIM2_CC1) 1: Remap                                                                   \
+                                  JEXT3 0: No remap (TIM2_CC1) 1: Remap     \
                                   (TIM20_TRGO) */
 #define HAL_REMAPADCTRIGGER_ADC12_JEXT6                                     \
   SYSCFG_CFGR4_ADC12_JEXT6_RMP /*!< Input trigger of ADC12 injected channel \
-                                  JEXT6 0: No remap (EXTI line 15) 1: Remap                                                                   \
+                                  JEXT6 0: No remap (EXTI line 15) 1: Remap \
                                   (TIM20_TRGO2) */
 #define HAL_REMAPADCTRIGGER_ADC12_JEXT13                                     \
   SYSCFG_CFGR4_ADC12_JEXT13_RMP /*!< Input trigger of ADC12 injected channel \
-                                   JEXT13 0: No remap (TIM3_CC1) 1: Remap                                                                    \
+                                   JEXT13 0: No remap (TIM3_CC1) 1: Remap    \
                                    (TIM20_CC4) */
 
 #define IS_HAL_REMAPADCTRIGGER(RMP)               \
@@ -356,23 +356,23 @@ typedef enum {
                                    1: Remap (TIM20_CC1) */
 #define HAL_REMAPADCTRIGGER_ADC12_EXT13                                    \
   SYSCFG_CFGR4_ADC12_EXT13_RMP /*!< Input trigger of ADC12 regular channel \
-                                  EXT13 0: No remap (TIM6_TRGO) 1: Remap                                                                  \
+                                  EXT13 0: No remap (TIM6_TRGO) 1: Remap   \
                                   (TIM20_CC2) */
 #define HAL_REMAPADCTRIGGER_ADC12_EXT15                                    \
   SYSCFG_CFGR4_ADC12_EXT15_RMP /*!< Input trigger of ADC12 regular channel \
-                                  EXT15 0: No remap (TIM3_CC4) 1: Remap                                                                  \
+                                  EXT15 0: No remap (TIM3_CC4) 1: Remap    \
                                   (TIM20_CC3) */
 #define HAL_REMAPADCTRIGGER_ADC12_JEXT3                                     \
   SYSCFG_CFGR4_ADC12_JEXT3_RMP /*!< Input trigger of ADC12 injected channel \
-                                  JEXT3 0: No remap (TIM2_CC1) 1: Remap                                                                   \
+                                  JEXT3 0: No remap (TIM2_CC1) 1: Remap     \
                                   (TIM20_TRGO) */
 #define HAL_REMAPADCTRIGGER_ADC12_JEXT6                                     \
   SYSCFG_CFGR4_ADC12_JEXT6_RMP /*!< Input trigger of ADC12 injected channel \
-                                  JEXT6 0: No remap (EXTI line 15) 1: Remap                                                                   \
+                                  JEXT6 0: No remap (EXTI line 15) 1: Remap \
                                   (TIM20_TRGO2) */
 #define HAL_REMAPADCTRIGGER_ADC12_JEXT13                                     \
   SYSCFG_CFGR4_ADC12_JEXT13_RMP /*!< Input trigger of ADC12 injected channel \
-                                   JEXT13 0: No remap (TIM3_CC1) 1: Remap                                                                    \
+                                   JEXT13 0: No remap (TIM3_CC1) 1: Remap    \
                                    (TIM20_CC4) */
 #define HAL_REMAPADCTRIGGER_ADC34_EXT5                                         \
   SYSCFG_CFGR4_ADC34_EXT5_RMP /*!< Input trigger of ADC34 regular channel EXT5 \
@@ -384,19 +384,19 @@ typedef enum {
                                    1: Remap (TIM20_TRGO2) */
 #define HAL_REMAPADCTRIGGER_ADC34_EXT15                                    \
   SYSCFG_CFGR4_ADC34_EXT15_RMP /*!< Input trigger of ADC34 regular channel \
-                                  EXT15 0: No remap (TIM2_CC1) 1: Remap                                                                  \
+                                  EXT15 0: No remap (TIM2_CC1) 1: Remap    \
                                   (TIM20_CC1) */
 #define HAL_REMAPADCTRIGGER_ADC34_JEXT5                                     \
   SYSCFG_CFGR4_ADC34_JEXT5_RMP /*!< Input trigger of ADC34 injected channel \
-                                  JEXT5 0: No remap (TIM4_CC3) 1: Remap                                                                   \
+                                  JEXT5 0: No remap (TIM4_CC3) 1: Remap     \
                                   (TIM20_TRGO) */
 #define HAL_REMAPADCTRIGGER_ADC34_JEXT11                                     \
   SYSCFG_CFGR4_ADC34_JEXT11_RMP /*!< Input trigger of ADC34 injected channel \
-                                   JEXT11 0: No remap (TIM1_CC3) 1: Remap                                                                    \
+                                   JEXT11 0: No remap (TIM1_CC3) 1: Remap    \
                                    (TIM20_TRGO2) */
 #define HAL_REMAPADCTRIGGER_ADC34_JEXT14                                     \
   SYSCFG_CFGR4_ADC34_JEXT14_RMP /*!< Input trigger of ADC34 injected channel \
-                                   JEXT14 0: No remap (TIM7_TRGO) 1: Remap                                                                    \
+                                   JEXT14 0: No remap (TIM7_TRGO) 1: Remap   \
                                    (TIM20_CC2) */
 
 #define IS_HAL_REMAPADCTRIGGER(RMP)               \

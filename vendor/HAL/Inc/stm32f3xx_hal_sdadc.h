@@ -356,23 +356,31 @@ typedef void (*pSDADC_CallbackTypeDef)(
 #define SDADC_EXT_TRIG_TIM12_CC2 \
   (0x00000100UL) /*!< Trigger source for SDADC3 */
 #define SDADC_EXT_TRIG_TIM15_CC2 \
-  (0x00000200UL)                               /*!< Trigger source for SDADC1 */
-#define SDADC_EXT_TRIG_TIM2_CC3 (0x00000200UL) /*!< Trigger source for SDADC2 \
-                                                */
-#define SDADC_EXT_TRIG_TIM2_CC4 (0x00000200UL) /*!< Trigger source for SDADC3 \
-                                                */
-#define SDADC_EXT_TRIG_TIM3_CC1 (0x00000300UL) /*!< Trigger source for SDADC1 \
-                                                */
-#define SDADC_EXT_TRIG_TIM3_CC2 (0x00000300UL) /*!< Trigger source for SDADC2 \
-                                                */
-#define SDADC_EXT_TRIG_TIM3_CC3 (0x00000300UL) /*!< Trigger source for SDADC3 \
-                                                */
-#define SDADC_EXT_TRIG_TIM4_CC1 (0x00000400UL) /*!< Trigger source for SDADC1 \
-                                                */
-#define SDADC_EXT_TRIG_TIM4_CC2 (0x00000400UL) /*!< Trigger source for SDADC2 \
-                                                */
-#define SDADC_EXT_TRIG_TIM4_CC3 (0x00000400UL) /*!< Trigger source for SDADC3 \
-                                                */
+  (0x00000200UL) /*!< Trigger source for SDADC1 */
+#define SDADC_EXT_TRIG_TIM2_CC3                 \
+  (0x00000200UL) /*!< Trigger source for SDADC2 \
+                  */
+#define SDADC_EXT_TRIG_TIM2_CC4                 \
+  (0x00000200UL) /*!< Trigger source for SDADC3 \
+                  */
+#define SDADC_EXT_TRIG_TIM3_CC1                 \
+  (0x00000300UL) /*!< Trigger source for SDADC1 \
+                  */
+#define SDADC_EXT_TRIG_TIM3_CC2                 \
+  (0x00000300UL) /*!< Trigger source for SDADC2 \
+                  */
+#define SDADC_EXT_TRIG_TIM3_CC3                 \
+  (0x00000300UL) /*!< Trigger source for SDADC3 \
+                  */
+#define SDADC_EXT_TRIG_TIM4_CC1                 \
+  (0x00000400UL) /*!< Trigger source for SDADC1 \
+                  */
+#define SDADC_EXT_TRIG_TIM4_CC2                 \
+  (0x00000400UL) /*!< Trigger source for SDADC2 \
+                  */
+#define SDADC_EXT_TRIG_TIM4_CC3                 \
+  (0x00000400UL) /*!< Trigger source for SDADC3 \
+                  */
 #define SDADC_EXT_TRIG_TIM19_CC2 \
   (0x00000500UL) /*!< Trigger source for SDADC1 */
 #define SDADC_EXT_TRIG_TIM19_CC3 \
@@ -405,8 +413,9 @@ typedef void (*pSDADC_CallbackTypeDef)(
  */
 #define SDADC_INJECTED_DELAY_NONE \
   (0x00000000UL) /*!< No delay on injected conversion */
-#define SDADC_INJECTED_DELAY SDADC_CR2_JDS /*!< Delay on injected conversion \
-                                            */
+#define SDADC_INJECTED_DELAY                      \
+  SDADC_CR2_JDS /*!< Delay on injected conversion \
+                 */
 /**
  * @}
  */
@@ -460,13 +469,16 @@ typedef void (*pSDADC_CallbackTypeDef)(
  * @{
  */
 #define SDADC_FLAG_EOCAL SDADC_ISR_EOCALF /*!< End of calibration flag */
-#define SDADC_FLAG_JEOC SDADC_ISR_JEOCF   /*!< End of injected conversion flag \
-                                           */
-#define SDADC_FLAG_JOVR SDADC_ISR_JOVRF /*!< Injected conversion overrun flag \
+#define SDADC_FLAG_JEOC                                \
+  SDADC_ISR_JEOCF /*!< End of injected conversion flag \
+                   */
+#define SDADC_FLAG_JOVR                                                       \
+  SDADC_ISR_JOVRF                       /*!< Injected conversion overrun flag \
                                          */
 #define SDADC_FLAG_REOC SDADC_ISR_REOCF /*!< End of regular conversion flag */
-#define SDADC_FLAG_ROVR SDADC_ISR_ROVRF /*!< Regular conversion overrun flag \
-                                         */
+#define SDADC_FLAG_ROVR                                \
+  SDADC_ISR_ROVRF /*!< Regular conversion overrun flag \
+                   */
 /**
  * @}
  */

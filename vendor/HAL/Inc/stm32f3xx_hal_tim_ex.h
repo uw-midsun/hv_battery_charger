@@ -128,19 +128,21 @@ typedef struct {
 
 #if defined(TIM14)
 #define TIM_TIM14_GPIO (0x00000000U) /*!< TIM14 TI1 is connected to GPIO */
-#define TIM_TIM14_RTC (0x00000001U)  /*!< TIM14 TI1 is connected to RTC_clock \
-                                      */
-#define TIM_TIM14_HSE (0x00000002U)  /*!< TIM14 TI1 is connected to HSE/32U */
-#define TIM_TIM14_MCO (0x00000003U)  /*!< TIM14 TI1 is connected to MCO */
-#endif                               /* TIM14 */
+#define TIM_TIM14_RTC                                                        \
+  (0x00000001U)                     /*!< TIM14 TI1 is connected to RTC_clock \
+                                     */
+#define TIM_TIM14_HSE (0x00000002U) /*!< TIM14 TI1 is connected to HSE/32U */
+#define TIM_TIM14_MCO (0x00000003U) /*!< TIM14 TI1 is connected to MCO */
+#endif                              /* TIM14 */
 
 #if defined(TIM16)
 #define TIM_TIM16_GPIO (0x00000000U) /*!< TIM16 TI1 is connected to GPIO */
-#define TIM_TIM16_RTC (0x00000001U)  /*!< TIM16 TI1 is connected to RTC_clock \
-                                      */
-#define TIM_TIM16_HSE (0x00000002U)  /*!< TIM16 TI1 is connected to HSE/32 */
-#define TIM_TIM16_MCO (0x00000003U)  /*!< TIM16 TI1 is connected to MCO */
-#endif                               /* TIM16 */
+#define TIM_TIM16_RTC                                                        \
+  (0x00000001U)                     /*!< TIM16 TI1 is connected to RTC_clock \
+                                     */
+#define TIM_TIM16_HSE (0x00000002U) /*!< TIM16 TI1 is connected to HSE/32 */
+#define TIM_TIM16_MCO (0x00000003U) /*!< TIM16 TI1 is connected to MCO */
+#endif                              /* TIM16 */
 
 #if defined(TIM20)
 #define TIM_TIM20_ADC3_NONE                                                  \

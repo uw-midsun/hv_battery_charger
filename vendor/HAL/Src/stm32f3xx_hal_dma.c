@@ -601,7 +601,7 @@ void HAL_DMA_IRQHandler(DMA_HandleTypeDef *hdma) {
   }
 
   /* Transfer Error Interrupt management
-     ***************************************/
+   ***************************************/
   else if ((RESET != (flag_it & (DMA_FLAG_TE1 << hdma->ChannelIndex))) &&
            (RESET != (source_it & DMA_IT_TE))) {
     /* When a DMA transfer error occurs */
