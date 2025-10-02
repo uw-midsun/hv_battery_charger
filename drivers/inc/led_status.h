@@ -9,29 +9,13 @@
  * @author  Midnight Sun Team #24 - MSXVI
  ************************************************************************************************/
 
-#include <stdbool.h>
-
-enum Charging {
-  IS_CHARGING,
-  NOT_CHARGING,
-};
-
-enum Fault {
-  HAS_FAULT,
-  NO_FAULT,
-};
-
-typedef struct Application {
-  enum Charging is_charging;
-  enum Fault is_fault;
-} Application;
-
-typedef struct LED_Flashing_Flag {
-  bool flashing_toggle;
-} LED_Flashing_Flag;
+typedef enum {
+  LED_STATE_CHARGING,
+  LED_STATE_FAULT,
+  IDLE,
+  NUM_LED_STATES
+} LedState;
 
 HAL_StatusTypeDef led_init(void);
-HAL_StatusTypeDef led_run(Application* flag);
-void set_flashing_toggle(bool state);
-bool get_flashing_toggle(void);
-void set_fault(enum Fault state);
+HAL_StatusTypeDef led_run(Application* state);
+void set_state(Application* state, enum LedState* led_state);

@@ -8,6 +8,7 @@
  ************************************************************************************************/
 
 /* Standard library Headers */
+#include <stdbool.h>
 #include <stdint.h>
 #include <string.h>
 
@@ -36,49 +37,43 @@ HAL_StatusTypeDef led_init() {
   return HAL_OK;
 }
 
-static LED_Flashing_Flag led_flags = {0};
+typedef struct Application {
+  LedState led_state;
+  bool is_flashing;
+} Application;
 
 HAL_StatusTypeDef led_run(Application* state) {
-  switch (state->is_fault) {
-    case HAS_FAULT:
-      HAL_GPIO_SetPin(GPIOB, GPIO_PIN_0, GPIO_PIN_SET);
-      return HAL_OK;
-    case NO_FAULT:
-      HAL_GPIO_SetPin(GPIOB, GPIO_PIN_0, GPIO_PIN_RESET);
-      break;
-    default:
-      break;
-  }
-
-  switch (state->is_charging) {
-    case IS_CHARGING:
-      if (get_flashing_toggle()) {
-        HAL_GPIO_SetPin(GPIOB, GPIO_PIN_1, GPIO_PIN_SET);
+  switch (state->led_state) {
+    case LED_STATE_FAULT:
+      return HAL_GPIO_SetPin(GPIOB, GPIO_PIN_0, GPIO_PIN_SET);
+    case LED_STATE_CHARGING:
+      state->is_flashing = !state->is_flashing;
+      if (state->is_flashing) {
+        return HAL_GPIO_SetPin(GPIOB, GPIO_PIN_1, GPIO_PIN_SET);
       }
-      set_flashing_toggle(!get_flashing_toggle());
-      break;
-    case NOT_CHARGING:
-      HAL_GPIO_SetPin(GPIOB, GPIO_PIN_1, GPIO_PIN_RESET);
-      break;
+      return HAL_GPIO_SetPin(GPIOB, GPIO_PIN_1, GPIO_PIN_RESET);
+    case IDLE:
+      HAL_GPIO_SetPin(GPIOB, GPIO_PIN_0, GPIO_PIN_RESET);
+      return HAL_GPIO_SetPin(GPIOB, GPIO_PIN_1, GPIO_PIN_RESET);
     default:
       break;
   }
   return HAL_OK;
 }
 
-void set_flashing_toggle(bool state) { led_flags.flashing_toggle = state; }
-
-bool get_flashing_toggle(void) { return led_flags.flashing_toggle; }
-
-void set_fault(Application* state, enum Fault* is_fault) {
-  if (state->is_fault == HAS_FAULT) {
+void set_state(Application* state, enum LedState* led_state) {
+  if (state->led_state == LED_STATE_FAULT) {
     return;
   }
-  state->is_fault = is_fault;
+  state->led_state = led_state;
 }
 
-static void clear_fault(Application* state) {
-  if (state->is_fault == HAS_FAULT) {
-    state->is_fault = NO_FAULT;
+void clear_fault(Application* state) {
+  if (state->led_state == LED_STATE_FAULT) {
+    state->led_state = IDLE;
   }
 }
+
+void set_flashing(Application* state, bool is_flashing) { state->is_flashing = is_flashing; }
+
+bool get_flashing(Application* state) { return state->is_flashing; }
