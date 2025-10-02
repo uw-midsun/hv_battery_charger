@@ -1,0 +1,64 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+HELP_MESSAGE=$(cat <<EOF
+Usage: ./task <task> 
+Tasks:
+- format (format c and h files)
+- build (configure and build project)
+EOF
+)
+
+function format_dir() {
+    echo "Formatting: $1"
+	find $1  -iname '.h' -o -iname '.c' | xargs clang-format
+}
+
+function format_task() {
+	echo "Formatting!!"
+	DIRS=("matlab" "board" "drivers") 
+
+	for dir in "${DIRS[@]}"
+	do
+		format_dir $dir
+	done
+	echo "Done!"
+}
+
+function build_task() {
+	echo "Building!"
+	cmake -B build -G Ninja
+	pushd build 
+	ninja
+	popd
+}
+
+function print_help() {
+	echo "$HELP_MESSAGE"
+}
+
+task=${1:-""}
+
+case $task in 
+	'')
+		print_help
+	;;
+	--help)
+		print_help 
+	;;
+	help)
+		print_help
+	;;
+	format)
+		format_task
+	;;
+	build)
+	build_task
+	;;
+	*)
+		echo "Invalid command: '$task'"
+		echo 
+		print_help
+	;;
+esac

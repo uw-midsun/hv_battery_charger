@@ -13,17 +13,6 @@ sudo apt-get install gcc-11 g++-11 clang clang-format gdb
 sudo apt-get install cmake make ninja-build
 ```
 
-## To Build:
+## Task Script:
 
-```bash
-cmake -B build -G Ninja
-cmake --build build
-```
-or 
-
-```bash 
-cmake -B build -G Ninja 
-cd build 
-ninja
-```
-
+Use our task script to build and format your code `./task <task>`.
