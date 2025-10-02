@@ -3,8 +3,6 @@
 #include <stdbool.h>
 
 typedef struct {
-    bool is_charging;
-    bool is_fault;
 } Application;
 
 void application_init(Application *application);
