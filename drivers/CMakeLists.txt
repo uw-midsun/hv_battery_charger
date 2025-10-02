@@ -8,4 +8,5 @@ target_include_directories(drivers PUBLIC
 
 target_sources(drivers PRIVATE
 	src/lcd.c 
+	src/led_status.c
 )

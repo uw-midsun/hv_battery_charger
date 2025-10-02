@@ -9,13 +9,20 @@
  * @author  Midnight Sun Team #24 - MSXVI
  ************************************************************************************************/
 
+#include "stm32f3xx.h"
+
+// PORT_B.
+#define FAULT_LED_PIN GPIO_PIN_0
+#define CHARGING_LED_PIN GPIO_PIN_1
+
 typedef enum {
   LED_STATE_CHARGING,
   LED_STATE_FAULT,
-  IDLE,
+  LED_STATE_IDLE,
   NUM_LED_STATES
 } LedState;
 
-HAL_StatusTypeDef led_init(void);
-HAL_StatusTypeDef led_run(Application* state);
-void set_state(Application* state, enum LedState* led_state);
+void led_init();
+void led_run();
+void led_set_state(LedState led_state);
+void led_clear_fault();
