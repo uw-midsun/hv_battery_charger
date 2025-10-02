@@ -8,7 +8,7 @@
  * @date    2025-10-1
  * @author  Midnight Sun Team #24 - MSXVI
  ************************************************************************************************/
- 
+
 #include <stdbool.h>
 
 enum Charging {
@@ -27,7 +27,7 @@ typedef struct Application {
 } Application;
 
 typedef struct LED_Flashing_Flag {
-    bool flashing_toggle;
+  bool flashing_toggle;
 } LED_Flashing_Flag;
 
 HAL_StatusTypeDef led_init(void);
