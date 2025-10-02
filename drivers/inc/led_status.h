@@ -35,4 +35,3 @@ HAL_StatusTypeDef led_run(Application* flag);
 void set_flashing_toggle(bool state);
 bool get_flashing_toggle(void);
 void set_fault(enum Fault state);
-void clear_fault(void);
