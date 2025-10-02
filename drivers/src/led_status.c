@@ -78,6 +78,4 @@ void set_flashing(Application* state, bool is_flashing) {
   state->is_flashing = is_flashing;
 }
 
-bool get_flashing(Application* state) {
-  return state->is_flashing;
-}
+bool get_flashing(Application* state) { return state->is_flashing; }
