@@ -21,12 +21,12 @@ enum Fault {
   NO_FAULT,
 };
 
-typedef struct {
+typedef struct Application {
   enum Charging is_charging;
   enum Fault is_fault;
 } Application;
 
-typedef struct {
+typedef struct LED_Flashing_Flag {
     bool flashing_toggle;
 } LED_Flashing_Flag;
 
