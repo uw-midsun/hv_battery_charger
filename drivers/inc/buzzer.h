@@ -6,7 +6,7 @@
  * @brief   Public API for the Soberton PT-1203-3 Piezo Buzzer driver.
  *
  * @date    2025-10-12
- * @author  [Your Name], Midnight Sun Team #24 - MSXVI
+ * @author  Midnight Sun Team #24 - MSXVI
  ************************************************************************************************/
 
 // Include the main HAL header to bring in required types.
