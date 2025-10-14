@@ -3,7 +3,7 @@
 /************************************************************************************************
  * @file    buzzer.h
  *
- * @brief   Public API for the Soberton PT-1203-3 Piezo Buzzer driver.
+ * @brief   Public API for the Soberton PT-1203-3 buzzer driver.
  *
  * @date    2025-10-12
  * @author  Midnight Sun Team #24 - MSXVI
