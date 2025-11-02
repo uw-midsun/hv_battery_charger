@@ -7,12 +7,12 @@
  *
  * Code generated for Simulink model 'Controller'.
  *
- * Model version                  : 1.446
+ * Model version                  : 1.523
  * Simulink Coder version         : 23.2 (R2023b) 01-Aug-2023
- * C/C++ source code generated on : Wed Oct  1 12:01:05 2025
+ * C/C++ source code generated on : Sun Nov  2 00:58:04 2025
  *
  * Target selection: ert.tlc
- * Embedded hardware selection: Custom Processor->Custom Processor
+ * Embedded hardware selection: ARM Compatible->ARM Cortex-M
  * Code generation objectives:
  *    1. Execution efficiency
  *    2. RAM efficiency
@@ -25,17 +25,17 @@
 /* Logical type definitions */
 #if (!defined(__cplusplus))
 #ifndef false
-#define false (0U)
+#define false                          (0U)
 #endif
 
 #ifndef true
-#define true (1U)
+#define true                           (1U)
 #endif
 #endif
 
 /*=======================================================================*
  * Target hardware information
- *   Device type: Custom Processor->Custom Processor
+ *   Device type: ARM Compatible->ARM Cortex-M
  *   Number of bits:     char:   8    short:   16    int:  32
  *                       long:  32    long long:  64
  *                       native word size:  32
@@ -65,8 +65,8 @@ typedef double real64_T;
  * Generic type definitions: boolean_T, char_T, byte_T, int_T, uint_T,       *
  *                           real_T, time_T, ulong_T, ulonglong_T.           *
  *===========================================================================*/
-typedef float real_T;
-typedef float time_T;
+typedef double real_T;
+typedef double time_T;
 typedef unsigned char boolean_T;
 typedef int int_T;
 typedef unsigned int uint_T;
@@ -81,23 +81,23 @@ typedef char_T byte_T;
  *   int8_T, int16_T, int32_T     - signed 8, 16, or 32 bit integers     *
  *   uint8_T, uint16_T, uint32_T  - unsigned 8, 16, or 32 bit integers   *
  *=======================================================================*/
-#define MAX_int8_T ((int8_T)(127))
-#define MIN_int8_T ((int8_T)(-128))
-#define MAX_uint8_T ((uint8_T)(255U))
-#define MAX_int16_T ((int16_T)(32767))
-#define MIN_int16_T ((int16_T)(-32768))
-#define MAX_uint16_T ((uint16_T)(65535U))
-#define MAX_int32_T ((int32_T)(2147483647))
-#define MIN_int32_T ((int32_T)(-2147483647 - 1))
-#define MAX_uint32_T ((uint32_T)(0xFFFFFFFFU))
-#define MAX_int64_T ((int64_T)(9223372036854775807LL))
-#define MIN_int64_T ((int64_T)(-9223372036854775807LL - 1LL))
-#define MAX_uint64_T ((uint64_T)(0xFFFFFFFFFFFFFFFFULL))
+#define MAX_int8_T                     ((int8_T)(127))
+#define MIN_int8_T                     ((int8_T)(-128))
+#define MAX_uint8_T                    ((uint8_T)(255U))
+#define MAX_int16_T                    ((int16_T)(32767))
+#define MIN_int16_T                    ((int16_T)(-32768))
+#define MAX_uint16_T                   ((uint16_T)(65535U))
+#define MAX_int32_T                    ((int32_T)(2147483647))
+#define MIN_int32_T                    ((int32_T)(-2147483647-1))
+#define MAX_uint32_T                   ((uint32_T)(0xFFFFFFFFU))
+#define MAX_int64_T                    ((int64_T)(9223372036854775807LL))
+#define MIN_int64_T                    ((int64_T)(-9223372036854775807LL-1LL))
+#define MAX_uint64_T                   ((uint64_T)(0xFFFFFFFFFFFFFFFFULL))
 
 /* Block D-Work pointer type */
-typedef void* pointer_T;
+typedef void * pointer_T;
 
-#endif /* RTWTYPES_H */
+#endif                                 /* RTWTYPES_H */
 
 /*
  * File trailer for generated code.
