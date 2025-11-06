@@ -10,23 +10,25 @@
  ************************************************************************************************/
 
 // Include the main HAL header to bring in required types.
-#include "stm32f3xx_hal.h"
-#include "stm32f3xx_hal_tim.h"
-#include "stm32f3xx_hal_rcc.h"
-#include "stm32f3xx_hal_gpio.h"
 #include "stdint.h"
+#include "stm32f3xx_hal.h"
+#include "stm32f3xx_hal_gpio.h"
+#include "stm32f3xx_hal_rcc.h"
+#include "stm32f3xx_hal_tim.h"
 
 // --- Driver Configuration ---
 
 /**
- * @brief The effective clock frequency of the timer after the prescaler is applied.
- * @details This is calculated from the System Clock (72MHz) and the Prescaler (71)
- *          set in buzzer_init(). Formula: 72000000 / (71 + 1) = 1000000Hz = 1MHz
+ * @brief The effective clock frequency of the timer after the prescaler is
+ * applied.
+ * @details This is calculated from the System Clock (72MHz) and the Prescaler
+ * (71) set in buzzer_init(). Formula: 72000000 / (71 + 1) = 1000000Hz = 1MHz
  */
 #define BUZZER_TIMER_CLOCK_HZ 1000000UL
 
 /**
- * @brief The specific hardware timer channel connected to the buzzer's GPIO pin.
+ * @brief The specific hardware timer channel connected to the buzzer's GPIO
+ * pin.
  * @details
  */
 #define BUZZER_TIM_CHANNEL TIM_CHANNEL_1
@@ -52,7 +54,8 @@ void buzzer_stop(void);
 /**
  * @brief   Sets the buzzer's output frequency to generate a tone.
  * @param   freq The desired frequency in Hz.
- *               A frequency of 0 will stop the PWM output and silence the buzzer.
+ *               A frequency of 0 will stop the PWM output and silence the
+ * buzzer.
  * @retval  None
  */
 void buzzer_freq(uint32_t freq);
