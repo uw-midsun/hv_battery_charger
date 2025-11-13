@@ -1,7 +1,7 @@
 #pragma once
 
 /************************************************************************************************
- * @file    led_status.c
+ * @file    led_status.h
  *
  * @brief   Header file for LED Status driver
  *
