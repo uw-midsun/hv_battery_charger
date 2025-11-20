@@ -26,3 +26,4 @@ typedef struct {
 
 void encoder_init();
 void encoder_run();
+EncoderState get_encoder_state();

@@ -16,7 +16,12 @@
 
 static volatile EncoderState encoder_state = {0, 0};
 
-static const int8_t quadrature_table[16] = {0, -1, 1, 0, 1, 0, 0, -1, -1, 0,  0, 1, 0, 1, -1, 0};
+static const int8_t quadrature_table[16] = {
+    0, -1, 1, 0,
+    1, 0, 0, -1,
+   -1, 0, 0, 1,
+    0, 1, -1, 0,
+};
 
 void encoder_init() {
   __HAL_RCC_GPIOA_CLK_ENABLE();
@@ -75,4 +80,8 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin) {
       last_interrupt_time = current_time;
     }
   }
+}
+
+EncoderState get_encoder_state() {
+  return encoder_state;
 }
