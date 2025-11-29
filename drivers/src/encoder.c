@@ -53,8 +53,8 @@ void encoder_init() {
 void encoder_run() {
   static uint8_t last_state = 0;
 
-  uint8_t A = HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_3) ? 1 : 0;
-  uint8_t B = HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_15) ? 1 : 0;
+  uint8_t A = HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_3);
+  uint8_t B = HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_15);
 
   uint8_t current_state = (A << 1) | B;
   uint8_t index = (last_state << 2) | current_state;
@@ -65,20 +65,13 @@ void encoder_run() {
   last_state = current_state;
 }
 
-void EXTI15_10_IRQHandler() { HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_10); }
-
-void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin) {
-  if (GPIO_Pin == GPIO_PIN_10) {
-    static uint32_t last_interrupt_time = 0;
-    uint32_t current_time = HAL_GetTick();
-    if ((current_time - last_interrupt_time) > DEBOUNCE_DELAY_MS) {
-      if (encoder_state.button_toggle == BUTTON_ON) {
-        encoder_state.button_toggle = BUTTON_OFF;
-      } else {
-        encoder_state.button_toggle = BUTTON_ON;
-      }
-      last_interrupt_time = current_time;
-    }
+void EXTI15_10_IRQHandler(void) {
+    __HAL_GPIO_EXTI_CLEAR_IT(GPIO_PIN_10);
+     static uint32_t last_interrupt_time = 0;
+  uint32_t current_time = HAL_GetTick();
+  if ((current_time - last_interrupt_time) > DEBOUNCE_DELAY_MS) {
+    encoder_state.button_toggle = !encoder_state.button_toggle;
+    last_interrupt_time = current_time;
   }
 }
 

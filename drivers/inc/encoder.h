@@ -10,18 +10,13 @@
  ************************************************************************************************/
 
 #include "stm32f3xx.h"
+#include "stdbool.h"
 
 #define DEBOUNCE_DELAY_MS 20
 
-typedef enum {
-  BUTTON_ON,
-  BUTTON_OFF,
-  NUM_BUTTON_STATES
-} ButtonState;
-
 typedef struct {
   int position;
-  ButtonState button_toggle;
+  bool button_toggle;
 } EncoderState;
 
 void encoder_init();
