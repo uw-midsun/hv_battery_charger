@@ -2,7 +2,7 @@ add_executable(board)
 
 add_libs(board)
 
-target_link_libraries(board drivers)
+target_link_libraries(board)
 
 target_include_directories(board PRIVATE ${CMAKE_CURRENT_LIST_DIR}/inc)
 
@@ -13,5 +13,4 @@ set_property(TARGET board PROPERTY LINK_DEPENDS ${linkerscript})
 target_sources(board PRIVATE 
 	src/main.c
 	src/syscalls.c
-	src/application.c
 )

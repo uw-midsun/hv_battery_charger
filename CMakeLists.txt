@@ -18,6 +18,5 @@ include(add_libs)
 
 add_subdirectory(hal_conf)
 add_subdirectory(vendor)
-add_subdirectory(drivers)
 add_subdirectory(matlab)
 add_subdirectory(board)
