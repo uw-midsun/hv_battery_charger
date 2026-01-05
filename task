@@ -3,7 +3,7 @@
 set -euo pipefail
 
 HELP_MESSAGE=$(cat <<EOF
-Usage: ./task <task> 
+Usage: ./task <task>
 Tasks:
 - format (format c and h files)
 - build (configure and build project)
@@ -17,7 +17,7 @@ function format_dir() {
 
 function format_task() {
 	echo "Formatting!!"
-	DIRS=("matlab" "board" "drivers") 
+	DIRS=("matlab" "source")
 
 	for dir in "${DIRS[@]}"
 	do
@@ -29,7 +29,7 @@ function format_task() {
 function build_task() {
 	echo "Building!"
 	cmake -B build -G Ninja
-	pushd build 
+	pushd build
 	ninja
 	popd
 }
